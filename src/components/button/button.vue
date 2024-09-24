@@ -1,8 +1,8 @@
 <template>
     <div class="flex items-center">
-        <VaButton class="mr-6 mb-2" hover-behavior="opacity" :hover-opacity="0.4" pressed-behavior="mask"
+        <VaButton class="mr-6 mb-2 w-full" hover-behavior="opacity" :hover-opacity="0.4" pressed-behavior="mask"
             :pressed-opacity="1" :pressed-mask-color="props.color" size="large" :color="props.color"
-            :backgroundOpacity="props.opacity" style="border: 2px solid #000; border-radius: 10px;">
+            :backgroundOpacity="props.opacity">
             <i :class="icon"></i> &nbsp;
             {{ name }}
         </VaButton>

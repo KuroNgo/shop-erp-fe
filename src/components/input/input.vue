@@ -1,6 +1,6 @@
 <template>
     <div>
-        <VaInput :type="props.type" v-model="value" class="mb-6 w-[400px]" :placeholder="props.placeholderValue"
+        <VaInput :type="props.type" v-model="value" class="mb-6 w-[400px] input" :placeholder="props.placeholderValue"
             autocomplete="off" style="border: 1px solid #000; padding: 2px;">
             <template #appendInner>
                 <VaIcon :name="props.iconName" color="secondary"></VaIcon>
@@ -23,7 +23,7 @@ const value = ref('')
 </script>
 
 <style scoped lang="scss">
-input:-webkit-autofill {
+.input:-webkit-autofill {
     background-color: transparent !important;
     color: inherit !important;
     -webkit-box-shadow: 0 0 0px 1000px white inset;

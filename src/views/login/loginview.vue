@@ -1,9 +1,9 @@
 <template>
-    <div class="w-full h-screen transform scale-x-1 scale-y-1" id="container">
+    <div class="w-full h-full transform scale-x-1 scale-y-1" id="container">
         <div class="items-center w-full h-full grid justify-items-center">
             <div class="w-[500px] h-[600px] rounded-lg" id="box">
                 <div class="w-full h-full p-8">
-                    <h1 class="text-center font-bold mt-25">Đăng nhập</h1>
+                    <h1 class="text-center font-bold mt-25 ">Đăng nhập</h1>
                     <div class="grid justify-center relative top-10  ">
                         <label>Email</label>
                         <Input type="text" iconName="mail_outline" placeholderValue="Vui lòng nhập Email" />
@@ -55,7 +55,7 @@ label {
 }
 
 .custom-transform {
-    transform: translate(22px, 40px);
+    transform: translate(0px, 40px);
 }
 
 .custom-margin-left {

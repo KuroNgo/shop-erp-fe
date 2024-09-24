@@ -14,6 +14,7 @@
     "pinia": "^2.1.7",
     "vue": "^3.4.29",
     "vue-router": "^4.3.3",
+    "vue3-google-login": "^2.0.33",
     "vuestic-ui": "^1.10.1"
   },
   "devDependencies": {
