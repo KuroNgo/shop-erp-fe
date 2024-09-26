@@ -11,7 +11,9 @@
     "type-check": "vue-tsc --build --force"
   },
   "dependencies": {
+    "nprogress": "^0.2.0",
     "pinia": "^2.1.7",
+    "v-tooltip": "^2.1.3",
     "vue": "^3.4.29",
     "vue-router": "^4.3.3",
     "vue3-google-login": "^2.0.33",
@@ -20,6 +22,7 @@
   "devDependencies": {
     "@tsconfig/node20": "^20.1.4",
     "@types/node": "^20.16.5",
+    "@types/nprogress": "^0.2.3",
     "@vitejs/plugin-vue": "^5.0.5",
     "@vitejs/plugin-vue-jsx": "^4.0.0",
     "@vue/tsconfig": "^0.5.1",

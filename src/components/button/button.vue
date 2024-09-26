@@ -1,13 +1,13 @@
 <template>
     <div class="flex items-center">
-        <button class="relative flex justify-start items-center w-[80%] h-[30px] overflow-hidden bg-transparent  
-            text-black hover:text-white hover:bg-violet-600 transition duration-300 ease-in-out p-2 rounded-md m-2">
-            <i :class="icon" :style="{ color: color }" class="translate-x-4 text-[13px]"></i>
-            <p class="translate-x-12 relative ">{{ props.name }}</p>
-        </button>
+        <VaButton class="mr-6 mb-2 w-full" hover-behavior="opacity" :hover-opacity="0.4" pressed-behavior="mask"
+            :pressed-opacity="1" :pressed-mask-color="props.color" size="large" :color="props.color"
+            :backgroundOpacity="props.opacity" style="border: 2px solid #000; border-radius: 10px;">
+            <i :class="icon"></i> &nbsp;
+            {{ name }}
+        </VaButton>
     </div>
 </template>
-
 <script setup lang="ts">
 type Prop = {
     name: string,
@@ -16,6 +16,5 @@ type Prop = {
     opacity: string,
     icon: string,
 }
-
 const props = defineProps<Prop>()
 </script>
