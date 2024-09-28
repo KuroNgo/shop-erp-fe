@@ -15,9 +15,9 @@
             <Avatar color="#949494" icon="person" data="" size="medium" class="text-center m-2" id="avatar" />
         </div>
     </div>
-    <div class="w-full h-screen flex ">
-        <div class="content h-full w-[300px] bg-teal-100 overflow-y-auto overflow-x-hidden ">
-            <div class="translate-y-20">
+    <div class="w-full flex translate-y-20 h-full absolute">
+        <div class="content block w-[320px] bg-teal-100 overflow-y-auto overflow-x-hidden pd-10 ">
+            <div class="relative">
                 <div class="translate-x-2 translate-y-2">
                     <VaSidebar :minimized="minimized" class="aside">
                         <VaPopover icon="dashboard" message="Dashboard" placement="right" readonly
@@ -132,25 +132,16 @@
                     <supplier />
                     <warehouse />
                 </div>
-
-                <!-- <Divider value="SETTINGS" class="translate-y-44 font-bold" />
-                <div class="translate-x-2 translate-y-48">
-                    <VaSidebar :minimized="minimized" class="aside">
-                        <VaPopover icon="settings" message="Settings" placement="right" readonly :disabled="!minimized">
-                            <VaSidebarItem :active="'Settings' === activeElement" @click="activeElement = 'Settings'">
-                                <VaSidebarItemContent>
-                                    <VaIcon name="settings" />
-                                    <VaSidebarItemTitle>Settings</VaSidebarItemTitle>
-                                </VaSidebarItemContent>
-                            </VaSidebarItem>
-                        </VaPopover>
-                    </VaSidebar>
-                </div> -->
             </div>
         </div>
         <div class="w-[100%] h-full overflow-y-auto overflow-x-hidden ">
-            <div class="custom-transform-2">
-                <p class="text-3xl font-bold">Dashboard</p>
+            <div class="custom-transform-2 ">
+                <p class="text-5xl font-bold">Dashboard</p>
+                <p class="text-sm"></p>
+            </div>
+
+            <div>
+                <!-- <chart /> -->
             </div>
         </div>
     </div>
@@ -195,7 +186,6 @@ import stock_adjustment from './sidebar/warehouse_management/stock_adjustment.vu
 import stock_movement from './sidebar/warehouse_management/stock_movement.vue';
 import supplier from './sidebar/warehouse_management/supplier.vue';
 import warehouse from './sidebar/warehouse_management/warehouse.vue';
-
 import { onBeforeUnmount, onMounted, ref } from 'vue';
 
 const activeElement = ref('Dashboard');
@@ -257,12 +247,13 @@ aside {
 }
 
 .custom-transform-2 {
-    transform: translate(1rem, 6rem);
+    transform: translate(2rem, 2rem);
 }
 
 @media screen and (max-width: 500px) {
     .content {
         width: 100px;
+        min-width: 85px;
     }
 
     .nav-content {
