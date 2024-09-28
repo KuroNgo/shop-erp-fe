@@ -18,4 +18,5 @@ export default defineConfig({
   define: {
     'process.env': {},
   },
+  base: './', // Đảm bảo cấu hình đúng đường dẫn cho assets,
 })
