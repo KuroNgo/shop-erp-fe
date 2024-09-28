@@ -7,7 +7,7 @@
 
 <style lang="scss">
 #app {
-  overflow: auto;
+  overflow: hidden;
   height: 100vh;
   font-weight: 400 !important;
 }

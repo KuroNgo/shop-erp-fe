@@ -1,10 +1,23 @@
 <template>
-    <VaBadge class="mr-6" overlap dot :offset="[-2, 2]">
+    <VaBadge overlap>
         <template #text>
-            <VaIcon name="warning" size="12px" />
+            {{ count }}
         </template>
-        <VaIcon name="account_box" size="30px" />
+        <VaButton preset="primary">
+            <VaIcon :name="props.icon" />
+            {{ props.value }}
+        </VaButton>
     </VaBadge>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { ref } from 'vue';
+
+interface Prop {
+    value: string,
+    icon: string,
+}
+
+const count = ref(0)
+const props = defineProps<Prop>()
+</script>
