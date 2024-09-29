@@ -5,9 +5,11 @@ import App from './App.vue'
 import router from './router'
 
 import vue3GoogleLogin from 'vue3-google-login'
-import { createVuestic } from 'vuestic-ui'
+import ElementPlus from 'element-plus'
+import * as ElementPlusIconsVue from '@element-plus/icons-vue'
 
-import './style/reset.scss'
+import 'element-plus/dist/index.css'
+import './style/reset.css'
 import './style/iconfont.css'
 import 'nprogress/nprogress.css'
 
@@ -15,10 +17,12 @@ const app = createApp(App)
 
 app.use(createPinia())
 app.use(router)
-app.use(createVuestic())
+app.use(ElementPlus)
 app.use(vue3GoogleLogin, {
     clientId:  import.meta.env.CLIENT_ID
 })
-
+for (const [key, component] of Object.entries(ElementPlusIconsVue)) {
+    app.component(key, component)
+}
 
 app.mount('#app')
