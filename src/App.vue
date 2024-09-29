@@ -5,7 +5,7 @@
 <script setup lang="ts">
 </script>
 
-<style lang="scss">
+<style lang="css">
 #app {
   overflow: hidden;
   height: 100vh;

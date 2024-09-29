@@ -4,26 +4,25 @@
             <div class="w-[500px] h-[600px] rounded-lg" id="box">
                 <div class="w-full h-full p-8">
                     <h1 class="text-center font-bold mt-25 ">Đăng nhập</h1>
-                    <div class="grid justify-center relative top-10  ">
-                        <label>Email</label>
-                        <Input type="text" iconName="mail_outline" placeholderValue="Vui lòng nhập Email" />
+                    <div class="grid justify-left relative top-10">
+                        <label class="">Email</label>
+                        <el-input v-model="input" type="email" placeholder="Please input Email"
+                            class="h-[40px] w-screen mb-2"></el-input>
                         <label>Mật khẩu</label>
-                        <Input type="password" iconName="password" placeholderValue="Vui lòng nhập Mật khẩu" class="" />
-                    </div>
-                    <div class="flex justify-around custom-transform">
-                        <Checkbox label="Nhớ mật khẩu" />
-                        <a href="#" class="custom-margin-left font-bold">Quên mật khẩu</a>
+                        <el-input v-model="password" type="password" placeholder="Please input password" show-password
+                            maxlength="20" class="h-[40px] mt-2 mb-2"></el-input>
                     </div>
 
-                    <Button opacity="0.9" name="Đăng nhập" icon="" class="sign-in" color="#0a2041"
-                        maskColor="blue"></Button>
-                    <div class="line">
-                        <p class="line-throught">Hoặc</p>
+                    <div class="translate-y-10 flex justify-between items-center">
+                        <el-checkbox v-model="checkRemember" class="font-sm translate-y-1">Nhớ mật khẩu</el-checkbox>
+                        <a href="#">Quên mật khẩu</a>
                     </div>
-                    <Button opacity="0.9" name="Google" icon="fa-brands fa-google" class="google" color="#b7f1f9"
-                        maskColor="blue">
-                    </Button>
 
+                    <el-button size="large" class="w-full mt-5 custom-transform font-bold" type="primary" plain>Đăng
+                        nhập</el-button>
+                    <p class="line-throught">Hoặc</p>
+                    <el-button size="large" class="w-full mt-5 custom-transform" type="primary">Đăng nhập bằng
+                        Google</el-button>
                 </div>
             </div>
         </div>
@@ -31,12 +30,13 @@
 </template>
 
 <script setup lang="ts">
-import Input from '@/components/input/input.vue';
-import Button from '@/components/button/button.vue';
-import Checkbox from '@/components/checkbox/checkbox.vue';
+import { ref } from 'vue'
+const input = ref('')
+const password = ref('')
+const checkRemember = ref('')
 </script>
 
-<style scoped lang="scss">
+<style scoped lang="css">
 #container {
     background-image: url("../../assets/img/background.png");
     background-size: cover;
@@ -55,7 +55,7 @@ label {
 }
 
 .custom-transform {
-    transform: translate(0px, 40px);
+    transform: translate(0px, 70px);
 }
 
 .custom-margin-left {
