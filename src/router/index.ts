@@ -12,8 +12,9 @@ const router = createRouter({
 
     {
       path: '/',
-      name: 'Dashboard | ERP Platform',
-      component: dashboard
+      name: 'ERP Platform',
+      component: dashboard,
+      
     },
 
     {
@@ -26,7 +27,13 @@ const router = createRouter({
       path:'/not-found',
       name: 'Not Found | ERP Platform',
       component: () => import('@/views/error/notfound.vue')
-    }
+    },
+    
+    {
+      path: '/chat', 
+      name: 'Chat | ERP Platform',
+      component: () => import('@/views/dashboard/sidebar/chatview.vue')
+    },
   ]
 })
 

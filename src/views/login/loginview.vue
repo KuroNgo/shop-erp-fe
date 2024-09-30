@@ -18,7 +18,7 @@
                         <a href="#">Quên mật khẩu</a>
                     </div>
 
-                    <el-button size="large" class="w-full mt-5 custom-transform font-bold" type="primary" plain>Đăng
+                    <el-button size="large" class="w-full mt-5 custom-transform font-bold" type="primary">Đăng
                         nhập</el-button>
                     <p class="line-throught">Hoặc</p>
                     <el-button size="large" class="w-full mt-5 custom-transform" type="primary">Đăng nhập bằng
