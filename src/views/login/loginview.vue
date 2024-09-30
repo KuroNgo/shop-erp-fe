@@ -7,10 +7,10 @@
                     <div class="grid justify-left relative top-10">
                         <label class="">Email</label>
                         <el-input v-model="input" type="email" placeholder="Please input Email"
-                            class="h-[40px] w-screen mb-2"></el-input>
+                            class="h-[40px] mb-2 w-full"></el-input>
                         <label>Mật khẩu</label>
                         <el-input v-model="password" type="password" placeholder="Please input password" show-password
-                            maxlength="20" class="h-[40px] mt-2 mb-2"></el-input>
+                            maxlength="20" class="h-[40px] mt-2 mb-2 w-full"></el-input>
                     </div>
 
                     <div class="translate-y-10 flex justify-between items-center">
