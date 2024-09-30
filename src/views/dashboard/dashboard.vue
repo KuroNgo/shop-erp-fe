@@ -1,7 +1,7 @@
 <template>
-    <div class="w-full h-full bg-slate-200">
+    <div class="w-full h-full bg-neutral-50">
         <el-container class="h-full w-full">
-            <el-aside width="300px" class="bg-white shadow-lg ">
+            <el-aside width="300px" class="bg-white shadow-lg scroll-hide">
                 <el-row :span="12">
                     <el-divider content-position="left">OVERVIEW</el-divider>
                     <el-menu default-active="1" class="ml-3 w-full" @open="handleOpen" @close="handleClose">
@@ -140,7 +140,7 @@
                         </el-sub-menu>
                     </el-menu>
                 </el-header>
-                <el-main class="h-full">
+                <el-main class="h-full scroll-hide">
                     <dashboard v-if="activeView === 'dashboard'" />
                     <chat v-if="activeView === 'chat'" />
                     <todo v-if="activeView === 'todo'" />
@@ -169,3 +169,14 @@ const handleClose = (key: string, keyPath: string[]) => {
     console.log(key, keyPath)
 }
 </script>
+
+<style scoped>
+.scroll-hide {
+    -ms-overflow-style: none;
+    overflow: auto;
+}
+
+.scroll-hide::-webkit-scrollbar {
+    display: none;
+}
+</style>
