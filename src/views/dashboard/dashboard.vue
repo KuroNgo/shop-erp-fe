@@ -120,27 +120,54 @@
                 </el-row>
             </el-aside>
             <el-container>
-                <el-header class="bg-white m-4 rounded-md shadow-lg">
-                    <el-menu ellipsis-icon mode="horizontal" :popper-offset="16" style="max-width: 600px">
-                        <el-menu-item index="1">
-                            <el-icon><Select /></el-icon>
-                            <span>Processing Center</span>
-                        </el-menu-item>
-                        <el-sub-menu index="2">
-                            <template #title>Workspace</template>
-                            <el-menu-item index="2-1">item one</el-menu-item>
-                            <el-menu-item index="2-2">item two</el-menu-item>
-                            <el-menu-item index="2-3">item three</el-menu-item>
-                            <el-sub-menu index="2-4">
-                                <template #title>item four</template>
-                                <el-menu-item index="2-4-1">item one</el-menu-item>
-                                <el-menu-item index="2-4-2">item two</el-menu-item>
-                                <el-menu-item index="2-4-3">item three</el-menu-item>
-                            </el-sub-menu>
-                        </el-sub-menu>
+                <el-header class="bg-white m-4 rounded-md shadow-lg ">
+                    <el-menu ellipsis-icon mode="horizontal" :popper-offset="16"
+                        class="items-center  flex justify-between">
+                        <div>
+                            <el-input v-model="input" style="width: 270px; height: 40px;" placeholder="Type something"
+                                maxlength="10" :prefix-icon="Search" autosize />
+                        </div>
+
+                        <div>
+                            <p class="font-bold text-2xl">LOGO</p>
+                        </div>
+
+                        <div class="flex">
+                            <el-tooltip class="box-item" effect="light" content="help" placement="bottom-start">
+                                <el-button :icon="QuestionFilled" circle class="ml-5" />
+                            </el-tooltip>
+
+                            <el-badge is-dot class="ml-5">
+                                <el-tooltip class="box-item" effect="light" content="notification"
+                                    placement="bottom-start">
+                                    <el-button :icon="Notification" circle />
+                                </el-tooltip>
+                            </el-badge>
+
+                            <el-badge is-dot>
+                                <el-tooltip class="box-item" effect="light" content="chat" placement="bottom-start">
+                                    <el-button :icon="ChatDotRound" circle class="ml-5" />
+                                </el-tooltip>
+                            </el-badge>
+
+                            <el-tooltip class="box-item" effect="light" content="refresh" placement="bottom-start">
+                                <el-button :icon="Refresh" circle class="ml-5" />
+                            </el-tooltip>
+                            <el-avatar :size="35"
+                                src="https://cube.elemecdn.com/3/7c/3ea6beec64369c2642b92c6726f1epng.png"
+                                class="ml-5" />
+                            <div class="ml-2">
+                                <p class="text-slate-400">Ngô Hoài Phong</p>
+                                <p class="font-bold text-sm">Admin</p>
+                            </div>
+                        </div>
                     </el-menu>
                 </el-header>
                 <el-main class="h-full scroll-hide">
+                    <div class="flex">
+                        <p class="mb-5 font-bold text-xl items-center">Dashboard</p>
+                        <!-- <p class="items-center text-sm translate-y-1">/edit</p> -->
+                    </div>
                     <dashboard v-if="activeView === 'dashboard'" />
                     <chat v-if="activeView === 'chat'" />
                     <todo v-if="activeView === 'todo'" />
@@ -159,6 +186,7 @@ import dashboard from './sidebar/dashboardview.vue'
 import todo from './sidebar/todo.vue';
 import settings from './sidebar/settings.vue';
 import usersettings from './sidebar/usersettings.vue';
+import { QuestionFilled, Notification, ChatDotRound, Refresh, Search } from '@element-plus/icons-vue'
 
 const activeView = ref('dashboard')
 
@@ -168,6 +196,7 @@ const handleOpen = (key: string, keyPath: string[]) => {
 const handleClose = (key: string, keyPath: string[]) => {
     console.log(key, keyPath)
 }
+const input = ref('')
 </script>
 
 <style scoped>

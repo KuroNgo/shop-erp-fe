@@ -7,6 +7,7 @@
 
 <style lang="css">
 #app {
+  font-family: "Roboto", sans-serif;
   overflow: hidden;
   height: 100vh;
   font-weight: 400 !important;
