@@ -102,46 +102,97 @@
                     </div>
                 </el-card>
             </div>
-            <div class="w-[70%]">
+            <div class="w-full">
                 <!-- TODO Top Product -->
                 <el-card style="width: 100%" class="h-[400px]" shadow="always">
-                    <div>
+                    <div class="flex items-center justify-between">
                         <div>
                             <p class="font-bold text-xl">Top Product</p>
                             <p class="text-sm text-neutral-500 mt-2">In Unit</p>
                         </div>
+                        <div>
+                            <el-select v-model="formInline.user" placeholder="Choose time" clearable>
+                                <el-option label="Days" value="1" />
+                                <el-option label="Weeks" value="2" />
+                                <el-option label="Months" value="3" />
+                            </el-select>
+                        </div>
                     </div>
                     <el-divider />
                     <div>
-
+                        <chart />
                     </div>
                 </el-card>
             </div>
         </div>
         <div class="mt-5 flex ">
             <div class="mr-5 w-full">
-                <!-- chart -->
-                <el-card style="width: 100%" class="h-[300px]" shadow="always">To Do list</el-card>
+                <!-- To Do list -->
+                <el-card style="width: 100%" class="h-[300px] scroll-hide " shadow="always">
+                    <div class="">
+                        <p class="font-bold text-xl">To-do list</p>
+                        <p class="text-sm text-neutral-500 mt-2">In Unit</p>
+                    </div>
+                    <el-divider />
+                    <el-table :data="tableData" style="width: 100%">
+                        <el-table-column prop="date" label="Date" width="100" />
+                        <el-table-column prop="name" label="Name" width="100" />
+                        <el-table-column prop="address" label="Address" />
+                    </el-table>
+                </el-card>
             </div>
             <div class="mr-5 w-full">
-                <!-- chart -->
-                <el-card style="width: 100%" class="h-[300px]" shadow="always">Top Employee</el-card>
+                <!--Top Employee -->
+                <el-card style="width: 100%" class="h-[300px] scroll-hide" shadow="always">
+                    <div class="">
+                        <p class="font-bold text-xl">Top Employee</p>
+                        <p class="text-sm text-neutral-500 mt-2">In Unit</p>
+                    </div>
+                    <el-divider />
+                    <el-table :data="tableData" style="width: 100%">
+                        <el-table-column prop="date" label="Date" width="100" />
+                        <el-table-column prop="name" label="Name" width="100" />
+                        <el-table-column prop="address" label="Address" />
+                    </el-table>
+                </el-card>
             </div>
             <div class="w-full">
-                <el-card style="width: 100%" class="h-[300px]" shadow="always">Top Product 2</el-card>
+                <!-- Top Product 2 -->
+                <el-card style="width: 100%" class="h-[300px] scroll-hide" shadow="always">
+                    <div class="">
+                        <p class="font-bold text-xl">Top Product 2</p>
+                        <p class="text-sm text-neutral-500 mt-2">In Unit</p>
+                    </div>
+                    <el-divider />
+                    <el-table :data="tableData" style="width: 100%">
+                        <el-table-column prop="date" label="Date" width="100" />
+                        <el-table-column prop="name" label="Name" width="100" />
+                        <el-table-column prop="address" label="Address" />
+                    </el-table>
+                </el-card>
             </div>
         </div>
 
         <div class="mt-5 ">
             <div class="w-full">
-                <!-- chart -->
-                <el-card style="width: 100%" class="h-[500px]" shadow="always">Employee Manager</el-card>
-            </div>
-        </div>
-
-        <div class="mt-5 ">
-            <div class="w-full">
-                <p>Footer</p>
+                <!-- Employee Manager -->
+                <el-card style="width: 100%" class="h-[500px] scroll-hide" shadow="always">
+                    <div class="">
+                        <p class="font-bold text-xl">Employee Manager</p>
+                        <p class="text-sm text-neutral-500 mt-2">In Unit</p>
+                    </div>
+                    <el-divider />
+                    <div>
+                        <el-table :data="tableData" style="width: 100%" :row-class-name="tableRowClassName">
+                            <el-table-column prop="date" label="Date" width="180" />
+                            <el-table-column prop="name" label="Name" width="180" />
+                            <el-table-column prop="date" label="Date" width="180" />
+                            <el-table-column prop="name" label="Name" width="180" />
+                            <el-table-column prop="date" label="Date" width="180" />
+                            <el-table-column prop="address" label="Address" />
+                        </el-table>
+                    </div>
+                </el-card>
             </div>
         </div>
     </div>
@@ -176,6 +227,50 @@ const outputValue3 = useTransition(source3, {
     duration: 1500,
 })
 source3.value = 26
+
+const tableData = [
+    {
+        date: '2016-05-03',
+        name: 'Tom',
+        address: 'No. 189, Grove St, Los Angeles',
+    },
+    {
+        date: '2016-05-02',
+        name: 'Tom',
+        address: 'No. 189, Grove St, Los Angeles',
+    },
+    {
+        date: '2016-05-04',
+        name: 'Tom',
+        address: 'No. 189, Grove St, Los Angeles',
+    },
+    {
+        date: '2016-05-01',
+        name: 'Tom',
+        address: 'No. 189, Grove St, Los Angeles',
+    },
+]
+
+interface User {
+    date: string
+    name: string
+    address: string
+}
+
+const tableRowClassName = ({
+    row,
+    rowIndex,
+}: {
+    row: User
+    rowIndex: number
+}) => {
+    if (rowIndex === 1) {
+        return 'warning-row'
+    } else if (rowIndex === 3) {
+        return 'success-row'
+    }
+    return ''
+}
 </script>
 
 <style scoped>
@@ -193,5 +288,14 @@ source3.value = 26
 span {
     font-size: xx-large;
     font-weight: 700;
+}
+
+.scroll-hide {
+    -ms-overflow-style: none;
+    overflow: auto;
+}
+
+.scroll-hide::-webkit-scrollbar {
+    display: none;
 }
 </style>
