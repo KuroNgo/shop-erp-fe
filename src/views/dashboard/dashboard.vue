@@ -125,7 +125,7 @@
                         class="items-center  flex justify-between">
                         <div>
                             <el-input v-model="input" style="width: 270px; height: 40px;" placeholder="Type something"
-                                maxlength="10" :prefix-icon="Search" autosize />
+                                :prefix-icon="Search" />
                         </div>
 
                         <div>
