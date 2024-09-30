@@ -148,12 +148,10 @@
 </template>
 <script setup lang="ts">
 import { PieChart, TrendCharts, DataAnalysis } from '@element-plus/icons-vue'
-import pie from '@/components/charts/pie/chart.vue';
-import chart from '@/components/charts/line/chart.vue';
-import bar from '@/components/charts/bar/chart.vue'
 import { reactive } from 'vue'
 import { ref } from 'vue'
 import { useTransition } from '@vueuse/core'
+import chart from '../../../components/charts/bar/chart.vue'
 
 const formInline = reactive({
     user: '',
