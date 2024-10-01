@@ -80,15 +80,15 @@
                                 <el-icon>
                                     <OfficeBuilding />
                                 </el-icon>
-                                <span>Financial Report</span>
+                                <span>Transaction Categories</span>
                             </el-menu-item>
 
                             <!-- Transaction -->
-                            <el-menu-item index="3-8" @click="activeView = 'financial report'" title="Financial Report">
+                            <el-menu-item index="3-8" @click="activeView = 'transaction'" title="Transaction">
                                 <el-icon>
                                     <OfficeBuilding />
                                 </el-icon>
-                                <span>Financial Report</span>
+                                <span>Transaction</span>
                             </el-menu-item>
 
                             <!-- <el-sub-menu index="3-4" title="Candidater">
@@ -104,69 +104,94 @@
                             </template>
 
                             <!-- Attendance -->
-                            <el-menu-item index="3-1" @click="activeView = 'account'">
+                            <el-menu-item index="3-1" @click="activeView = 'Attendance'" title="Attendance">
                                 <el-icon>
                                     <OfficeBuilding />
                                 </el-icon>
-                                <span>Account</span>
+                                <span>Attendance</span>
                             </el-menu-item>
 
-                            <!-- Budget -->
-                            <el-menu-item index="3-2" @click="activeView = 'budget'" title="Budget">
+                            <!-- Benefit -->
+                            <el-menu-item index="3-2" @click="activeView = 'Budget'" title="Budget">
                                 <el-icon>
                                     <OfficeBuilding />
                                 </el-icon>
                                 <span>Budget</span>
                             </el-menu-item>
 
-                            <!-- Financial Report -->
-                            <el-menu-item index="3-3" @click="activeView = 'financial report'" title="Financial Report">
+                            <!-- Candidate -->
+                            <el-menu-item index="3-3" @click="activeView = 'Candidate'" title="Candidate">
                                 <el-icon>
                                     <OfficeBuilding />
                                 </el-icon>
-                                <span>Financial Report</span>
+                                <span>Candidate</span>
                             </el-menu-item>
 
-                            <!-- Invoices -->
-                            <el-menu-item index="3-4" @click="activeView = 'invoices'" title="Invoices">
+                            <!-- Contracts -->
+                            <el-menu-item index="3-4" @click="activeView = 'Contracts'" title="Contracts">
                                 <el-icon>
                                     <OfficeBuilding />
                                 </el-icon>
-                                <span>Invoices</span>
+                                <span>Contracts</span>
                             </el-menu-item>
 
-                            <!-- Payments -->
-                            <el-menu-item index="3-5" @click="activeView = 'payments'" title="Payments">
+                            <!-- Departments -->
+                            <el-menu-item index="3-5" @click="activeView = 'Departments'" title="Departments">
                                 <el-icon>
                                     <OfficeBuilding />
                                 </el-icon>
-                                <span>Payments</span>
+                                <span>Departments</span>
                             </el-menu-item>
 
-                            <!-- Taxes -->
-                            <el-menu-item index="3-6" @click="activeView = 'taxes'" title="Taxes">
+                            <!-- Employees -->
+                            <el-menu-item index="3-6" @click="activeView = 'Employees'" title="Employees">
                                 <el-icon>
                                     <OfficeBuilding />
                                 </el-icon>
-                                <span>Taxes</span>
+                                <span>Employees</span>
                             </el-menu-item>
 
-                            <!-- Transaction Categories -->
-                            <el-menu-item index="3-7" @click="activeView = 'Transaction Categories'"
-                                title="Transaction Categories">
+                            <!-- Leave Request -->
+                            <el-menu-item index="3-7" @click="activeView = 'Leave Request'" title="Leave Request">
                                 <el-icon>
                                     <OfficeBuilding />
                                 </el-icon>
-                                <span>Financial Report</span>
+                                <span>Leave Request</span>
                             </el-menu-item>
 
-                            <!-- Transaction -->
-                            <el-menu-item index="3-8" @click="activeView = 'financial report'" title="Financial Report">
+                            <!-- Performance Review -->
+                            <el-menu-item index="3-8" @click="activeView = 'Performance Review'"
+                                title="Performance Review">
                                 <el-icon>
                                     <OfficeBuilding />
                                 </el-icon>
-                                <span>Financial Report</span>
+                                <span>Performance Review</span>
                             </el-menu-item>
+
+                            <!-- Role -->
+                            <el-menu-item index="3-8" @click="activeView = 'Role'" title="Role">
+                                <el-icon>
+                                    <OfficeBuilding />
+                                </el-icon>
+                                <span>Role</span>
+                            </el-menu-item>
+
+                            <!-- Salary -->
+                            <el-menu-item index="3-8" @click="activeView = 'Salary'" title="Salary">
+                                <el-icon>
+                                    <OfficeBuilding />
+                                </el-icon>
+                                <span>Salary</span>
+                            </el-menu-item>
+
+                            <!-- User -->
+                            <el-menu-item index="3-8" @click="activeView = 'User'" title="User">
+                                <el-icon>
+                                    <OfficeBuilding />
+                                </el-icon>
+                                <span>User</span>
+                            </el-menu-item>
+
                         </el-sub-menu>
                         <el-sub-menu index="5" class="">
                             <template #title>
@@ -175,36 +200,37 @@
                                 </el-icon>
                                 <span>Sale and Distribution</span>
                             </template>
-                            <!-- Account -->
-                            <el-menu-item index="3-1" @click="activeView = 'account'">
+
+                            <!-- Category -->
+                            <el-menu-item index="3-1" @click="activeView = 'Category'" title="Category">
                                 <el-icon>
                                     <OfficeBuilding />
                                 </el-icon>
-                                <span>Account</span>
+                                <span>Category</span>
                             </el-menu-item>
 
-                            <!-- Budget -->
-                            <el-menu-item index="3-2" @click="activeView = 'budget'" title="Budget">
+                            <!-- Customer -->
+                            <el-menu-item index="3-2" @click="activeView = 'Customer'" title="Customer">
                                 <el-icon>
                                     <OfficeBuilding />
                                 </el-icon>
-                                <span>Budget</span>
-                            </el-menu-item>
-
-                            <!-- Financial Report -->
-                            <el-menu-item index="3-3" @click="activeView = 'financial report'" title="Financial Report">
-                                <el-icon>
-                                    <OfficeBuilding />
-                                </el-icon>
-                                <span>Financial Report</span>
+                                <span>Customer</span>
                             </el-menu-item>
 
                             <!-- Invoices -->
-                            <el-menu-item index="3-4" @click="activeView = 'invoices'" title="Invoices">
+                            <el-menu-item index="3-3" @click="activeView = 'Invoices'" title="Invoices">
                                 <el-icon>
                                     <OfficeBuilding />
                                 </el-icon>
                                 <span>Invoices</span>
+                            </el-menu-item>
+
+                            <!-- Order Detail -->
+                            <el-menu-item index="3-4" @click="activeView = 'Order Detail'" title="Order Detail">
+                                <el-icon>
+                                    <OfficeBuilding />
+                                </el-icon>
+                                <span>Order Detail</span>
                             </el-menu-item>
 
                             <!-- Payments -->
@@ -215,30 +241,30 @@
                                 <span>Payments</span>
                             </el-menu-item>
 
-                            <!-- Taxes -->
-                            <el-menu-item index="3-6" @click="activeView = 'taxes'" title="Taxes">
+                            <!-- Products -->
+                            <el-menu-item index="3-6" @click="activeView = 'Products'" title="Products">
                                 <el-icon>
                                     <OfficeBuilding />
                                 </el-icon>
-                                <span>Taxes</span>
+                                <span>Products</span>
                             </el-menu-item>
 
-                            <!-- Transaction Categories -->
-                            <el-menu-item index="3-7" @click="activeView = 'Transaction Categories'"
-                                title="Transaction Categories">
+                            <!-- Sale Order -->
+                            <el-menu-item index="3-7" @click="activeView = 'Sale Order'" title="Sale Order">
                                 <el-icon>
                                     <OfficeBuilding />
                                 </el-icon>
-                                <span>Financial Report</span>
+                                <span>Sale Order</span>
                             </el-menu-item>
 
-                            <!-- Transaction -->
-                            <el-menu-item index="3-8" @click="activeView = 'financial report'" title="Financial Report">
+                            <!-- Sale Report -->
+                            <el-menu-item index="3-8" @click="activeView = 'Sale Report'" title="Sale Report">
                                 <el-icon>
                                     <OfficeBuilding />
                                 </el-icon>
-                                <span>Financial Report</span>
+                                <span>Sale Report</span>
                             </el-menu-item>
+
                         </el-sub-menu>
                         <el-sub-menu index="6" class="">
                             <template #title>
@@ -247,69 +273,70 @@
                                 </el-icon>
                                 <span>Warehouse</span>
                             </template>
-                            <!-- Account -->
-                            <el-menu-item index="3-1" @click="activeView = 'account'">
+
+                            <!-- Inventory -->
+                            <el-menu-item index="3-1" @click="activeView = 'inventory'" title="Inventory">
                                 <el-icon>
                                     <OfficeBuilding />
                                 </el-icon>
-                                <span>Account</span>
+                                <span>Inventory</span>
                             </el-menu-item>
 
-                            <!-- Budget -->
-                            <el-menu-item index="3-2" @click="activeView = 'budget'" title="Budget">
+                            <!-- Product Category -->
+                            <el-menu-item index="3-2" @click="activeView = 'Product Category'" title="Product Category">
                                 <el-icon>
                                     <OfficeBuilding />
                                 </el-icon>
-                                <span>Budget</span>
+                                <span>Product Category</span>
                             </el-menu-item>
 
-                            <!-- Financial Report -->
-                            <el-menu-item index="3-3" @click="activeView = 'financial report'" title="Financial Report">
+                            <!-- Purchase Order -->
+                            <el-menu-item index="3-3" @click="activeView = 'Purchase Order'" title="Purchase Order">
                                 <el-icon>
                                     <OfficeBuilding />
                                 </el-icon>
-                                <span>Financial Report</span>
+                                <span>Purchase Order</span>
                             </el-menu-item>
 
-                            <!-- Invoices -->
-                            <el-menu-item index="3-4" @click="activeView = 'invoices'" title="Invoices">
+                            <!-- Purchase Order Detail -->
+                            <el-menu-item index="3-4" @click="activeView = 'Purchase Order Detail'"
+                                title="Purchase Order Detail">
                                 <el-icon>
                                     <OfficeBuilding />
                                 </el-icon>
-                                <span>Invoices</span>
+                                <span>Purchase Order Detail</span>
                             </el-menu-item>
 
-                            <!-- Payments -->
-                            <el-menu-item index="3-5" @click="activeView = 'payments'" title="Payments">
+                            <!-- Stock Adjustment -->
+                            <el-menu-item index="3-5" @click="activeView = 'Stock Adjustment'" title="Stock Adjustment">
                                 <el-icon>
                                     <OfficeBuilding />
                                 </el-icon>
-                                <span>Payments</span>
+                                <span>Stock Adjustment</span>
                             </el-menu-item>
 
-                            <!-- Taxes -->
-                            <el-menu-item index="3-6" @click="activeView = 'taxes'" title="Taxes">
+                            <!-- Stock Movement -->
+                            <el-menu-item index="3-6" @click="activeView = 'Stock Movement'" title="Stock Movement">
                                 <el-icon>
                                     <OfficeBuilding />
                                 </el-icon>
-                                <span>Taxes</span>
+                                <span>Stock Movement</span>
                             </el-menu-item>
 
-                            <!-- Transaction Categories -->
-                            <el-menu-item index="3-7" @click="activeView = 'Transaction Categories'"
-                                title="Transaction Categories">
+                            <!-- Supplier -->
+                            <el-menu-item index="3-7" @click="activeView = 'Supplier'" title="Supplier">
                                 <el-icon>
                                     <OfficeBuilding />
                                 </el-icon>
-                                <span>Financial Report</span>
+                                <span>Supplier</span>
                             </el-menu-item>
 
-                            <!-- Transaction -->
-                            <el-menu-item index="3-8" @click="activeView = 'financial report'" title="Financial Report">
+                            <!-- Warehouse -->
+                            <el-menu-item index="3-8" @click="activeView = 'Warehouse'" title="Warehouse">
                                 <el-icon>
                                     <OfficeBuilding />
                                 </el-icon>
-                                <span>Financial Report</span>
+                                <span>Warehouse</span>
                             </el-menu-item>
                         </el-sub-menu>
                         <el-divider content-position="left" class="-translate-x-4">APPROVAL</el-divider>
