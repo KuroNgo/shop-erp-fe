@@ -1,6 +1,6 @@
 <template>
     <el-card class="h-[650px]">
-        <div class="flex items-center">
+        <div class="flex items-center ">
             <div class="mr-2">
                 <el-avatar src="https://cube.elemecdn.com/0/88/03b0d39583f48206768a7534e55bcpng.png"></el-avatar>
             </div>
@@ -75,3 +75,14 @@
     </el-card>
 </template>
 <script setup lang="ts"></script>
+
+<style scoped>
+.scroll-hide {
+    -ms-overflow-style: none;
+    overflow: auto;
+}
+
+.scroll-hide::-webkit-scrollbar {
+    display: none;
+}
+</style>

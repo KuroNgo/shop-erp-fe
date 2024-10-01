@@ -32,7 +32,7 @@ const router = createRouter({
     {
       path: '/chat', 
       name: 'Chat | ERP Platform',
-      component: () => import('@/views/dashboard/sidebar/chatview.vue')
+      component: () => import('@/views/chat/chatview.vue')
     },
   ]
 })
