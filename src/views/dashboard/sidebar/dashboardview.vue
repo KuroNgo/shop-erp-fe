@@ -128,81 +128,97 @@
         <div class="mt-5 flex ">
             <div class="mr-5 w-full">
                 <!-- To Do list -->
-                <el-card style="width: 100%" class="h-[300px] scroll-hide " shadow="always">
+                <el-card style="width: 100%" class="h-[300px] scroll-hide-2" shadow="always">
                     <div class="">
-                        <p class="font-bold text-xl">To-do list</p>
+                        <p class="font-bold text-xl">To Do list</p>
                         <p class="text-sm text-neutral-500 mt-2">In Unit</p>
                     </div>
                     <el-divider />
-                    <el-table :data="tableData" style="width: 100%">
+                    <el-table :data="tableData" height="250">
                         <el-table-column prop="date" label="Date" width="100" />
                         <el-table-column prop="name" label="Name" width="100" />
                         <el-table-column prop="address" label="Address" />
                     </el-table>
                 </el-card>
             </div>
-            <div class="mr-5 w-full">
+            <div class="w-[700px]">
                 <!--Top Employee -->
-                <el-card style="width: 100%" class="h-[300px] scroll-hide" shadow="always">
+                <el-card style="width: 100%" class="h-[300px] scroll-hide-2" shadow="always">
                     <div class="">
                         <p class="font-bold text-xl">Top Employee</p>
                         <p class="text-sm text-neutral-500 mt-2">In Unit</p>
                     </div>
                     <el-divider />
-                    <el-table :data="tableData" style="width: 100%">
+                    <el-table :data="tableData" height="250">
                         <el-table-column prop="date" label="Date" width="100" />
                         <el-table-column prop="name" label="Name" width="100" />
                         <el-table-column prop="address" label="Address" />
                     </el-table>
                 </el-card>
             </div>
-            <div class="w-full">
-                <!-- Top Product 2 -->
-                <el-card style="width: 100%" class="h-[300px] scroll-hide" shadow="always">
-                    <div class="">
-                        <p class="font-bold text-xl">Top Product 2</p>
-                        <p class="text-sm text-neutral-500 mt-2">In Unit</p>
+        </div>
+        <div class="mt-5 ">
+            <div class="w-full h-[700px]]">
+                <!-- Employee Manager -->
+                <el-card style="width: 100%" class="h-full scroll-hide-2" shadow="always">
+                    <div class="flex justify-between items-center">
+                        <div>
+                            <p class="font-bold text-xl">Employee Manager</p>
+                            <p class="text-sm text-neutral-500 mt-2">In Unit</p>
+                        </div>
+                        <div>
+                            <el-input v-model="input" style="width: 270px; height: 40px;" placeholder="Type something"
+                                :prefix-icon="Search" ref="inpSearch" />
+                        </div>
                     </div>
                     <el-divider />
-                    <el-table :data="tableData" style="width: 100%">
+                    <el-table :data="tableData" height="350">
+                        <el-table-column prop="date" label="Date" width="100" />
+                        <el-table-column prop="name" label="Name" width="100" />
+                        <el-table-column prop="address" label="Address" />
+                        <el-table-column prop="date" label="Date" width="100" />
+                        <el-table-column prop="name" label="Name" width="100" />
+                        <el-table-column prop="address" label="Address" />
                         <el-table-column prop="date" label="Date" width="100" />
                         <el-table-column prop="name" label="Name" width="100" />
                         <el-table-column prop="address" label="Address" />
                     </el-table>
                 </el-card>
             </div>
+            <!-- <div>
+                <h1>Danh sách người dùng</h1>
+                <ul>
+                    <li v-for="employee in employees" :key="employee.Employee.ID">
+                        <p>Tên: {{ employee.Employee.Email }}</p>
+                    </li>
+                </ul>
+            </div> -->
         </div>
 
-        <div class="mt-5 ">
-            <div class="w-full">
-                <!-- Employee Manager -->
-                <el-card style="width: 100%" class="h-[500px] scroll-hide" shadow="always">
-                    <div class="">
-                        <p class="font-bold text-xl">Employee Manager</p>
-                        <p class="text-sm text-neutral-500 mt-2">In Unit</p>
-                    </div>
-                    <el-divider />
-                    <div>
-                        <el-table :data="tableData" style="width: 100%" :row-class-name="tableRowClassName">
-                            <el-table-column prop="date" label="Date" width="180" />
-                            <el-table-column prop="name" label="Name" width="180" />
-                            <el-table-column prop="date" label="Date" width="180" />
-                            <el-table-column prop="name" label="Name" width="180" />
-                            <el-table-column prop="date" label="Date" width="180" />
-                            <el-table-column prop="address" label="Address" />
-                        </el-table>
-                    </div>
-                </el-card>
-            </div>
-        </div>
     </div>
 </template>
 <script setup lang="ts">
-import { PieChart, TrendCharts, DataAnalysis } from '@element-plus/icons-vue'
+import { PieChart, TrendCharts, DataAnalysis, Search } from '@element-plus/icons-vue'
 import { reactive } from 'vue'
-import { ref } from 'vue'
+import { ref, onMounted } from 'vue'
 import { useTransition } from '@vueuse/core'
-import chart from '../../../components/charts/bar/chart.vue'
+import chart from '../../../components/charts/bar/barchart.vue'
+
+// const employees = ref([])
+
+// const fetchUsers = async () => {
+//     try {
+//         const response = await getAllEmployee() // Gọi hàm getUsers từ file api.ts
+//         employees.value = response.data.data
+//         console.log(employees.value)
+//     } catch (error) {
+//         console.error('Lỗi khi gọi API:', error)
+//     }
+// }
+
+// fetchUsers()
+
+const input = ref('')
 
 const formInline = reactive({
     user: '',
@@ -245,6 +261,16 @@ const tableData = [
         address: 'No. 189, Grove St, Los Angeles',
     },
     {
+        date: '2016-05-02',
+        name: 'Tom',
+        address: 'No. 189, Grove St, Los Angeles',
+    },
+    {
+        date: '2016-05-04',
+        name: 'Tom',
+        address: 'No. 189, Grove St, Los Angeles',
+    },
+    {
         date: '2016-05-01',
         name: 'Tom',
         address: 'No. 189, Grove St, Los Angeles',
@@ -255,21 +281,6 @@ interface User {
     date: string
     name: string
     address: string
-}
-
-const tableRowClassName = ({
-    row,
-    rowIndex,
-}: {
-    row: User
-    rowIndex: number
-}) => {
-    if (rowIndex === 1) {
-        return 'warning-row'
-    } else if (rowIndex === 3) {
-        return 'success-row'
-    }
-    return ''
 }
 </script>
 
@@ -297,5 +308,10 @@ span {
 
 .scroll-hide::-webkit-scrollbar {
     display: none;
+}
+
+.scroll-hide-2 {
+    -ms-overflow-style: none;
+    overflow: hidden;
 }
 </style>
