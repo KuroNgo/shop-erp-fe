@@ -1,5 +1,4 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import dashboard from '@/views/dashboard/dashboard.vue'
 import NProgress from 'nprogress'
 import accountDepartmentRoute from '@/views/departments/account/route'
 import humanResourceDepartmentRoute from '@/views/departments/hr/route'
@@ -23,12 +22,10 @@ const router = createRouter({
       redirect: '/dashboard'
     },
 
-
     {
       path: '/dashboard',
       name: 'Dashboard | ERP Platform',
-      component: dashboard,
-      
+      component: () => import('../views/dashboard/func/dashboardview.vue')
     },
 
     {
@@ -44,7 +41,7 @@ const router = createRouter({
     },
 
     {
-      path: '/todo',
+      path: '/to-do',
       name: 'To-do list | ERP Platform',
       component: () => import('../views/todo/todo.vue')
     },

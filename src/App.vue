@@ -1,8 +1,9 @@
 <template>
-  <RouterView />
+  <dashboard />
 </template>
 
 <script setup lang="ts">
+import dashboard from './views/dashboard/dashboard.vue';
 </script>
 
 <style lang="css">

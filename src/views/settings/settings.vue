@@ -15,9 +15,10 @@
                 </div>
             </el-card>
         </div>
-        <div class="mt-5 ">
-            <el-card style="width: 100%; height: 100px; color: #000;" class="rounded-r bg-cyan-700" shadow="always">
-                <div class="flex items-center">
+        <div class="mt-5">
+            <el-card style="width: 100%; height: 100px; color: #000; background-color: teal;" class="rounded-r "
+                shadow="always">
+                <div class="flex items-center ">
                     <el-icon :size="30" class="text-white mr-3">
                         <Bell />
                     </el-icon>

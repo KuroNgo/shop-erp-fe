@@ -4,21 +4,25 @@
             <el-aside width="300px" class="bg-white shadow-lg scroll-hide" ref="asideBar">
                 <el-row :span="12">
                     <el-divider content-position="left">OVERVIEW</el-divider>
-                    <el-menu default-active="1" class="ml-3 w-full" @open="handleOpen" @close="handleClose">
-                        <el-menu-item index="1" @click="activeView = 'dashboard'">
+                    <el-menu class="ml-3 w-full">
+                        <!-- Dashboard -->
+                        <el-menu-item index="1" @click="navigateTo('/dashboard', 'dashboard')">
                             <el-icon>
                                 <OfficeBuilding />
                             </el-icon>
                             <span>Dashboard</span>
                         </el-menu-item>
-                        <el-menu-item index="2" @click="activeView = 'user'">
+
+                        <!-- User settings -->
+                        <el-menu-item index="2" @click="navigateTo('/user-settings', 'user settings')">
                             <el-icon>
                                 <User />
                             </el-icon>
                             <span>User settings</span>
                         </el-menu-item>
                         <el-divider content-position="left" class="-translate-x-4">DEPARTMENTS</el-divider>
-                        <el-sub-menu index="3" class="">
+
+                        <el-sub-menu index="3">
                             <template #title>
                                 <el-icon>
                                     <Notebook />
@@ -27,7 +31,7 @@
                             </template>
 
                             <!-- Account -->
-                            <el-menu-item index="3-1" @click="activeView = 'account'">
+                            <el-menu-item index="3-1" @click="navigateTo('/account', 'account')">
                                 <el-icon>
                                     <OfficeBuilding />
                                 </el-icon>
@@ -35,7 +39,7 @@
                             </el-menu-item>
 
                             <!-- Budget -->
-                            <el-menu-item index="3-2" @click="activeView = 'budget'" title="Budget">
+                            <el-menu-item index="3-2" @click="navigateTo('/budget', 'budget')">
                                 <el-icon>
                                     <OfficeBuilding />
                                 </el-icon>
@@ -43,7 +47,7 @@
                             </el-menu-item>
 
                             <!-- Financial Report -->
-                            <el-menu-item index="3-3" @click="activeView = 'financial report'" title="Financial Report">
+                            <el-menu-item index="3-3" @click="navigateTo('/financial-report', 'financial report')">
                                 <el-icon>
                                     <OfficeBuilding />
                                 </el-icon>
@@ -51,7 +55,7 @@
                             </el-menu-item>
 
                             <!-- Invoices -->
-                            <el-menu-item index="3-4" @click="activeView = 'invoices'" title="Invoices">
+                            <el-menu-item index="3-4" @click="navigateTo('/invoice', 'invoices')">
                                 <el-icon>
                                     <OfficeBuilding />
                                 </el-icon>
@@ -59,7 +63,7 @@
                             </el-menu-item>
 
                             <!-- Payments -->
-                            <el-menu-item index="3-5" @click="activeView = 'payments'" title="Payments">
+                            <el-menu-item index="3-5" @click="navigateTo('/payment', 'payments')">
                                 <el-icon>
                                     <OfficeBuilding />
                                 </el-icon>
@@ -67,7 +71,7 @@
                             </el-menu-item>
 
                             <!-- Taxes -->
-                            <el-menu-item index="3-6" @click="activeView = 'taxes'" title="Taxes">
+                            <el-menu-item index="3-6" @click="navigateTo('/taxes', 'taxes')">
                                 <el-icon>
                                     <OfficeBuilding />
                                 </el-icon>
@@ -75,8 +79,8 @@
                             </el-menu-item>
 
                             <!-- Transaction Categories -->
-                            <el-menu-item index="3-7" @click="activeView = 'Transaction Categories'"
-                                title="Transaction Categories">
+                            <el-menu-item index="3-7"
+                                @click="navigateTo('/transaction-category', 'transaction-category')">
                                 <el-icon>
                                     <OfficeBuilding />
                                 </el-icon>
@@ -84,7 +88,7 @@
                             </el-menu-item>
 
                             <!-- Transaction -->
-                            <el-menu-item index="3-8" @click="activeView = 'transaction'" title="Transaction">
+                            <el-menu-item index="3-8" @click="navigateTo('/transaction', 'transaction')">
                                 <el-icon>
                                     <OfficeBuilding />
                                 </el-icon>
@@ -95,6 +99,7 @@
                                 <el-menu-item index="3-4-1">item one</el-menu-item>
                             </el-sub-menu> -->
                         </el-sub-menu>
+
                         <el-sub-menu index="4" class="">
                             <template #title>
                                 <el-icon>
@@ -104,7 +109,7 @@
                             </template>
 
                             <!-- Attendance -->
-                            <el-menu-item index="4-1" @click="activeView = 'Attendance'" title="Attendance">
+                            <el-menu-item index="4-1" @click="navigateTo('/attendance', 'attendance')">
                                 <el-icon>
                                     <OfficeBuilding />
                                 </el-icon>
@@ -112,7 +117,7 @@
                             </el-menu-item>
 
                             <!-- Benefit -->
-                            <el-menu-item index="4-2" @click="activeView = 'Benefit'" title="Benefit">
+                            <el-menu-item index="4-2" @click="navigateTo('/benefit', 'benefits')">
                                 <el-icon>
                                     <OfficeBuilding />
                                 </el-icon>
@@ -120,7 +125,7 @@
                             </el-menu-item>
 
                             <!-- Candidate -->
-                            <el-menu-item index="4-3" @click="activeView = 'Candidate'" title="Candidate">
+                            <el-menu-item index="4-3" @click="navigateTo('/candidate', 'candidate')">
                                 <el-icon>
                                     <OfficeBuilding />
                                 </el-icon>
@@ -128,7 +133,7 @@
                             </el-menu-item>
 
                             <!-- Contracts -->
-                            <el-menu-item index="4-4" @click="activeView = 'Contracts'" title="Contracts">
+                            <el-menu-item index="4-4" @click="navigateTo('/contracts', 'contracts')">
                                 <el-icon>
                                     <OfficeBuilding />
                                 </el-icon>
@@ -136,7 +141,7 @@
                             </el-menu-item>
 
                             <!-- Departments -->
-                            <el-menu-item index="4-5" @click="activeView = 'Departments'" title="Departments">
+                            <el-menu-item index="4-5" @click="navigateTo('/departments', 'departments')">
                                 <el-icon>
                                     <OfficeBuilding />
                                 </el-icon>
@@ -144,7 +149,7 @@
                             </el-menu-item>
 
                             <!-- Employees -->
-                            <el-menu-item index="4-6" @click="activeView = 'Employees'" title="Employees">
+                            <el-menu-item index="4-6" @click="navigateTo('/employees', 'employee')">
                                 <el-icon>
                                     <OfficeBuilding />
                                 </el-icon>
@@ -152,7 +157,7 @@
                             </el-menu-item>
 
                             <!-- Leave Request -->
-                            <el-menu-item index="4-7" @click="activeView = 'Leave Request'" title="Leave Request">
+                            <el-menu-item index="4-7" @click="navigateTo('/leave-requests', 'leave request')">
                                 <el-icon>
                                     <OfficeBuilding />
                                 </el-icon>
@@ -160,8 +165,7 @@
                             </el-menu-item>
 
                             <!-- Performance Review -->
-                            <el-menu-item index="4-8" @click="activeView = 'Performance Review'"
-                                title="Performance Review">
+                            <el-menu-item index="4-8" @click="navigateTo('/performance-review', 'performance review')">
                                 <el-icon>
                                     <OfficeBuilding />
                                 </el-icon>
@@ -169,7 +173,7 @@
                             </el-menu-item>
 
                             <!-- Role -->
-                            <el-menu-item index="4-9" @click="activeView = 'Role'" title="Role">
+                            <el-menu-item index="4-9" @click="navigateTo('/role', 'role')">
                                 <el-icon>
                                     <OfficeBuilding />
                                 </el-icon>
@@ -177,7 +181,7 @@
                             </el-menu-item>
 
                             <!-- Salary -->
-                            <el-menu-item index="4-10" @click="activeView = 'Salary'" title="Salary">
+                            <el-menu-item index="4-10" @click="navigateTo('/salary', 'salary')">
                                 <el-icon>
                                     <OfficeBuilding />
                                 </el-icon>
@@ -185,7 +189,7 @@
                             </el-menu-item>
 
                             <!-- User -->
-                            <el-menu-item index="4-11" @click="activeView = 'User'" title="User">
+                            <el-menu-item index="4-11" @click="navigateTo('/user', 'user')">
                                 <el-icon>
                                     <OfficeBuilding />
                                 </el-icon>
@@ -202,7 +206,7 @@
                             </template>
 
                             <!-- Category -->
-                            <el-menu-item index="5-1" @click="activeView = 'Category'" title="Category">
+                            <el-menu-item index="5-1" @click="navigateTo('/category', 'category')">
                                 <el-icon>
                                     <OfficeBuilding />
                                 </el-icon>
@@ -210,7 +214,7 @@
                             </el-menu-item>
 
                             <!-- Customer -->
-                            <el-menu-item index="5-2" @click="activeView = 'Customer'" title="Customer">
+                            <el-menu-item index="5-2" @click="navigateTo('/customer', 'customer')">
                                 <el-icon>
                                     <OfficeBuilding />
                                 </el-icon>
@@ -218,7 +222,7 @@
                             </el-menu-item>
 
                             <!-- Invoices -->
-                            <el-menu-item index="5-3" @click="activeView = 'Invoices'" title="Invoices">
+                            <el-menu-item index="5-3" @click="navigateTo('/invoice', 'invoice')">
                                 <el-icon>
                                     <OfficeBuilding />
                                 </el-icon>
@@ -226,7 +230,7 @@
                             </el-menu-item>
 
                             <!-- Order Detail -->
-                            <el-menu-item index="5-4" @click="activeView = 'Order Detail'" title="Order Detail">
+                            <el-menu-item index="5-4" @click="navigateTo('/order-detail', 'order detail')">
                                 <el-icon>
                                     <OfficeBuilding />
                                 </el-icon>
@@ -234,7 +238,7 @@
                             </el-menu-item>
 
                             <!-- Payments -->
-                            <el-menu-item index="5-5" @click="activeView = 'payments'" title="Payments">
+                            <el-menu-item index="5-5" @click="navigateTo('/payment', 'payments')">
                                 <el-icon>
                                     <OfficeBuilding />
                                 </el-icon>
@@ -242,7 +246,7 @@
                             </el-menu-item>
 
                             <!-- Products -->
-                            <el-menu-item index="5-6" @click="activeView = 'Products'" title="Products">
+                            <el-menu-item index="5-6" @click="navigateTo('/product', 'product')">
                                 <el-icon>
                                     <OfficeBuilding />
                                 </el-icon>
@@ -250,7 +254,7 @@
                             </el-menu-item>
 
                             <!-- Sale Order -->
-                            <el-menu-item index="5-7" @click="activeView = 'Sale Order'" title="Sale Order">
+                            <el-menu-item index="5-7" @click="navigateTo('/sale-order', 'sale order')">
                                 <el-icon>
                                     <OfficeBuilding />
                                 </el-icon>
@@ -258,7 +262,7 @@
                             </el-menu-item>
 
                             <!-- Sale Report -->
-                            <el-menu-item index="5-8" @click="activeView = 'Sale Report'" title="Sale Report">
+                            <el-menu-item index="5-8" @click="navigateTo('/sale-report', 'sale report')">
                                 <el-icon>
                                     <OfficeBuilding />
                                 </el-icon>
@@ -275,7 +279,7 @@
                             </template>
 
                             <!-- Inventory -->
-                            <el-menu-item index="6-1" @click="activeView = 'inventory'" title="Inventory">
+                            <el-menu-item index="6-1" @click="navigateTo('/inventory', 'inventory')">
                                 <el-icon>
                                     <OfficeBuilding />
                                 </el-icon>
@@ -283,7 +287,7 @@
                             </el-menu-item>
 
                             <!-- Product Category -->
-                            <el-menu-item index="6-2" @click="activeView = 'Product Category'" title="Product Category">
+                            <el-menu-item index="6-2" @click="navigateTo('/product-category', 'product category')">
                                 <el-icon>
                                     <OfficeBuilding />
                                 </el-icon>
@@ -291,7 +295,7 @@
                             </el-menu-item>
 
                             <!-- Purchase Order -->
-                            <el-menu-item index="6-3" @click="activeView = 'Purchase Order'" title="Purchase Order">
+                            <el-menu-item index="6-3" @click="navigateTo('/purchase-order', 'purchase order')">
                                 <el-icon>
                                     <OfficeBuilding />
                                 </el-icon>
@@ -299,7 +303,8 @@
                             </el-menu-item>
 
                             <!-- Purchase Order Detail -->
-                            <el-menu-item index="6-4" @click="activeView = 'Purchase Order Detail'"
+                            <el-menu-item index="6-4"
+                                @click="navigateTo('/purchase-order-detail', 'purchase order detail')"
                                 title="Purchase Order Detail">
                                 <el-icon>
                                     <OfficeBuilding />
@@ -308,7 +313,7 @@
                             </el-menu-item>
 
                             <!-- Stock Adjustment -->
-                            <el-menu-item index="6-5" @click="activeView = 'Stock Adjustment'" title="Stock Adjustment">
+                            <el-menu-item index="6-5" @click="navigateTo('/stock-adjustment', 'stock adjustment')">
                                 <el-icon>
                                     <OfficeBuilding />
                                 </el-icon>
@@ -316,7 +321,7 @@
                             </el-menu-item>
 
                             <!-- Stock Movement -->
-                            <el-menu-item index="6-6" @click="activeView = 'Stock Movement'" title="Stock Movement">
+                            <el-menu-item index="6-6" @click="navigateTo('/stock-movement', 'stock movement')">
                                 <el-icon>
                                     <OfficeBuilding />
                                 </el-icon>
@@ -324,7 +329,7 @@
                             </el-menu-item>
 
                             <!-- Supplier -->
-                            <el-menu-item index="6-7" @click="activeView = 'Supplier'" title="Supplier">
+                            <el-menu-item index="6-7" @click="navigateTo('/supplier', 'supplier')">
                                 <el-icon>
                                     <OfficeBuilding />
                                 </el-icon>
@@ -332,7 +337,7 @@
                             </el-menu-item>
 
                             <!-- Warehouse -->
-                            <el-menu-item index="6-8" @click="activeView = 'Warehouse'" title="Warehouse">
+                            <el-menu-item index="6-8" @click="navigateTo('/warehouse', 'warehouse')">
                                 <el-icon>
                                     <OfficeBuilding />
                                 </el-icon>
@@ -340,23 +345,30 @@
                             </el-menu-item>
                         </el-sub-menu>
                         <el-divider content-position="left" class="-translate-x-4">APPROVAL</el-divider>
-                        <el-menu-item index="7" @click="activeView = 'chat'">
+
+                        <!-- Chat -->
+                        <el-menu-item index="7" @click="navigateTo('/chat', 'chat')">
                             <el-icon>
                                 <Message />
                             </el-icon>
                             <span>Chat</span>
                         </el-menu-item>
-                        <el-menu-item index="8" @click="activeView = 'todo'">
+
+                        <!-- To Do List -->
+                        <el-menu-item index="8" @click="navigateTo('/to-do', 'to do list')">
                             <el-icon><Select /></el-icon>
                             <span>To Do</span>
                         </el-menu-item>
                         <el-divider content-position="left" class="-translate-x-4">SETTINGS</el-divider>
-                        <el-menu-item index="9" @click="activeView = 'settings'">
+
+                        <!-- Settings -->
+                        <el-menu-item index="9" @click="navigateTo('/settings', 'settings')">
                             <el-icon>
                                 <Setting />
                             </el-icon>
                             <span>Settings</span>
                         </el-menu-item>
+
                     </el-menu>
                 </el-row>
             </el-aside>
@@ -409,11 +421,7 @@
                         <p class="mb-5 font-bold text-xl items-center capitalize">{{ activeView }}</p>
                         <!-- <p class="items-center text-sm translate-y-1">/edit</p> -->
                     </div>
-                    <dashboard v-if="activeView === 'dashboard'" />
-                    <chat v-if="activeView === 'chat'" />
-                    <todo v-if="activeView === 'todo'" />
-                    <settings v-if="activeView === 'settings'" />
-                    <usersettings v-if="activeView === 'user'" />
+                    <router-view></router-view>
                 </el-main>
             </el-container>
         </el-container>
@@ -452,15 +460,10 @@
 </template>
 
 <script lang="ts" setup>
-import { ref, onMounted } from 'vue'
-import chat from '../chat/chatview.vue';
-import dashboard from '../dashboard/func/dashboardview.vue'
-import todo from '../todo/todo.vue';
-import settings from '../settings/settings.vue';
-import usersettings from '../user-settings/usersettings.vue';
 import { QuestionFilled, Notification, ChatDotRound, Refresh, Search } from '@element-plus/icons-vue'
 import type { ButtonInstance, InputInstance, AsideInstance, MainInstance } from 'element-plus'
-
+import { ref, onMounted, watch } from 'vue';
+import { useRoute, useRouter } from 'vue-router';
 
 const btnNoti = ref<ButtonInstance>()
 const btnChat = ref<ButtonInstance>()
@@ -470,15 +473,28 @@ const asideBar = ref<AsideInstance>()
 const main = ref<MainInstance>()
 
 const open = ref(false)
-const activeView = ref('dashboard')
-
-const handleOpen = (key: string, keyPath: string[]) => {
-    console.log(key, keyPath)
-}
-const handleClose = (key: string, keyPath: string[]) => {
-    console.log(key, keyPath)
-}
+const activeView = ref('')
+const route = useRoute(); // Lấy thông tin route hiện tại
+const router = useRouter();
 const input = ref('')
+
+const navigateTo = (path: string, viewName: string) => {
+    router.push(path);
+    activeView.value = viewName;
+};
+
+// Sử dụng onMounted để chỉ thiết lập activeView từ route hiện tại
+onMounted((): void => {
+    activeView.value = (route.name as string)?.split('|')[0].trim().toLowerCase() || ''; // Khởi tạo activeView từ route
+});
+
+// Theo dõi thay đổi route
+watch(route, (newRoute) => {
+    const routeName: string = (newRoute.name as string) || '';
+    const parts: string[] = routeName.split('|');
+    activeView.value = parts[0].trim().toLowerCase(); // Cập nhật activeView từ route
+});
+
 </script>
 
 <style scoped>

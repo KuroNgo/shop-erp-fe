@@ -41,7 +41,7 @@ const humanResourceDepartmentRoute = createRouter({
     },
     
     {
-      path: '/leaverequest', 
+      path: '/leave-requests', 
       name: 'Leave Request | ERP Platform',
       component: () => import('@/views/departments/hr/leaverequest/leaverequest.vue')
     },
