@@ -21,6 +21,7 @@ app.use(ElementPlus)
 app.use(vue3GoogleLogin, {
     clientId:  import.meta.env.CLIENT_ID
 })
+
 for (const [key, component] of Object.entries(ElementPlusIconsVue)) {
     app.component(key, component)
 }
