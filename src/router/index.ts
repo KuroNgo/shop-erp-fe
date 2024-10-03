@@ -8,11 +8,12 @@ import saleAndDistributionDepartmentRoute from '@/views/departments/sd/route'
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
-  ...accountDepartmentRoute.options.routes,
-  ...humanResourceDepartmentRoute.options.routes,
-  ...warehouseDepartmentRoute.options.routes,
-  ...saleAndDistributionDepartmentRoute.options.routes,
-  {
+    ...accountDepartmentRoute.options.routes,
+    ...humanResourceDepartmentRoute.options.routes,
+    ...warehouseDepartmentRoute.options.routes,
+    ...saleAndDistributionDepartmentRoute.options.routes,
+    
+    {
       path: '/:pathMatch(.*)*',
       redirect: '/not-found'
     },
@@ -43,7 +44,13 @@ const router = createRouter({
     {
       path: '/to-do',
       name: 'To-do list | ERP Platform',
-      component: () => import('../views/todo/todo.vue')
+      component: () => import('../views/todo/todo.vue'),
+      children: [
+        {
+          path: ':id', 
+          component: () => import('../views/todo/todo.vue')
+        }
+      ]
     },
 
     {
@@ -51,33 +58,27 @@ const router = createRouter({
       name: 'Settings | ERP Platform',
       component: () => import('../views/settings/settings.vue')
     },
-    
+
     {
-      path:'/not-found',
+      path: '/not-found',
       name: 'Not Found | ERP Platform',
       component: () => import('@/views/error/notfound.vue')
-    },
-    
-    {
-      path: '/chat', 
-      name: 'Chat | ERP Platform',
-      component: () => import('@/views/chat/chatview.vue')
-    },
+    }
   ]
 })
 
-
 router.beforeEach((to, from, next) => {
-  document.title = String(to.name)
-  next()
+  const titleParts = (to.name as string).split('|'); 
+  document.title = titleParts[0].trim();
+  next();
 })
 
-router.beforeEach(()=> {
+router.beforeEach(() => {
   NProgress.start();
   return true;
 })
 
-router.afterEach(()=>{
+router.afterEach(() => {
   NProgress.done();
 })
 
