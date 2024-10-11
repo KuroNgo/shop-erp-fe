@@ -78,12 +78,25 @@
     <el-drawer v-model="drEditUser" title="Edit user" direction="rtl">
         <span class="text-xl">Edit user</span>
         <el-divider />
+        <span class="font-medium">Name</span>
+        <el-input clearable v-model="inpChangeUsername" placeholder="Please input username" class="mt-3" />
+        <div class="mt-10 flex justify-end">
+            <el-button type="primary" plain>Save</el-button>
+            <el-button type="info" plain>Close</el-button>
+        </div>
     </el-drawer>
 
     <!-- Reset password-->
     <el-drawer v-model="drResetPassword" title="Reset password" direction="rtl">
         <span class="text-xl">Reset password</span>
         <el-divider />
+        <span class="font-medium">Password</span>
+        <el-input type="password" v-model="inpResetPassword" placeholder="Please input password" show-password
+            class="mt-3" />
+        <div class="mt-10 flex justify-end">
+            <el-button type="primary" plain>Save</el-button>
+            <el-button type="info" plain>Close</el-button>
+        </div>
     </el-drawer>
 
     <!-- Set up F2P-->
@@ -105,6 +118,8 @@ const drEditUser = ref(false)
 const drResetPassword = ref(false)
 const drSetupF2P = ref(false)
 const drNotificationSetting = ref(false)
+const inpResetPassword = ref('')
+const inpChangeUsername = ref('')
 
 const openEditUser = () => {
     drEditUser.value = true

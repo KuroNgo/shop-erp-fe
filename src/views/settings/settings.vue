@@ -1,9 +1,9 @@
 <template>
-    <div>
+    <div class="h-auto">
         <div>
             <el-card style="width: 100%; height: 120px;" shadow="always">
                 <div class="grid items-center">
-                    <p class="font-bold text-2xl mb-3">Theme</p>
+                    <p class="font-bold text-2xl mb-3 ">Theme</p>
                     <div class="">
                         <el-radio-group v-model="rd" size="medium">
                             <el-radio-button label="Light" value="Light">

@@ -8,7 +8,7 @@
                             <Postcard />
                         </el-icon>
                         <div class="ml-3">
-                            <p class="mb-2 font-bold">Total Sales</p>
+                            <p class="mb-2 font-bold text-cyan-500">Total Sales</p>
                             <p>1106 > 6202 Sale</p>
                         </div>
 
@@ -30,7 +30,7 @@
                             <Postcard />
                         </el-icon>
                         <div class="ml-3">
-                            <p class="mb-2 font-bold">Total Expaneses</p>
+                            <p class="mb-2 font-bold text-cyan-500">Total Expaneses</p>
                             <p>1106 > 6202 Sale</p>
                         </div>
 
@@ -52,7 +52,7 @@
                             <Postcard />
                         </el-icon>
                         <div class="ml-3">
-                            <p class="mb-2 font-bold">Total Employees</p>
+                            <p class="mb-2 font-bold text-cyan-500">Total Employees</p>
                             <p>1106 > 6202 Sale</p>
                         </div>
 
@@ -74,7 +74,7 @@
                 <el-card style="width: 100%" class="h-[400px]" shadow="always">
                     <div class="flex justify-between items-center">
                         <div>
-                            <p class="font-bold text-xl">Chart</p>
+                            <p class="font-bold text-xl text-cyan-500">Chart</p>
                             <p class="text-sm text-neutral-500 mt-2">In thousands</p>
                         </div>
                         <div>
@@ -107,7 +107,7 @@
                 <el-card style="width: 100%" class="h-[400px]" shadow="always">
                     <div class="flex items-center justify-between">
                         <div>
-                            <p class="font-bold text-xl">Top Product</p>
+                            <p class="font-bold text-xl text-cyan-500">Top Product</p>
                             <p class="text-sm text-neutral-500 mt-2">In Unit</p>
                         </div>
                         <div>
@@ -130,7 +130,7 @@
                 <!-- To Do list -->
                 <el-card style="width: 100%" class="h-[300px] scroll-hide-2" shadow="always">
                     <div class="">
-                        <p class="font-bold text-xl">To Do list</p>
+                        <p class="font-bold text-xl text-cyan-500">To Do list</p>
                         <p class="text-sm text-neutral-500 mt-2">In Unit</p>
                     </div>
                     <el-divider />
@@ -145,7 +145,7 @@
                 <!--Top Employee -->
                 <el-card style="width: 100%" class="h-[300px] scroll-hide-2" shadow="always">
                     <div class="">
-                        <p class="font-bold text-xl">Top Employee</p>
+                        <p class="font-bold text-xl text-cyan-500">Top Employee</p>
                         <p class="text-sm text-neutral-500 mt-2">In Unit</p>
                     </div>
                     <el-divider />
@@ -163,7 +163,7 @@
                 <el-card style="width: 100%" class="h-full scroll-hide-2" shadow="always">
                     <div class="flex justify-between items-center">
                         <div>
-                            <p class="font-bold text-xl">Employee Manager</p>
+                            <p class="font-bold text-xl text-cyan-500">Employee Manager</p>
                             <p class="text-sm text-neutral-500 mt-2">In Unit</p>
                         </div>
                         <div>
