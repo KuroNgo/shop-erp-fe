@@ -8,7 +8,7 @@
 - Thông báo các yêu cầu chấm công chưa được duyệt.
 - Biểu đồ thời gian làm việc của nhân viên (giờ đến, giờ về).
 ## 2. Check-in & Check-out (Chấm công vào ra)
-**Mục đích:** Quản lý thời gian bắt đầu và kết thúc công việc của nhân viên.
+**Mục đích**: Quản lý thời gian bắt đầu và kết thúc công việc của nhân viên.
 
 **Nội dung:**
 
@@ -17,7 +17,7 @@
 - Chức năng xác nhận lại giờ chấm công nếu có sai lệch hoặc quên chấm công.
 - Ghi nhận và quản lý việc chấm công qua ứng dụng di động, thiết bị hoặc máy chấm công.
 ## 3. Work Schedule (Lịch làm việc)
-**Mục đích:** Quản lý lịch trình làm việc và theo dõi giờ làm của nhân viên theo ngày, tuần, tháng.
+**Mục đích**: Quản lý lịch trình làm việc và theo dõi giờ làm của nhân viên theo ngày, tuần, tháng.
 
 **Nội dung:**
 
@@ -26,7 +26,7 @@
 - Tạo mới, chỉnh sửa và cập nhật lịch trình làm việc.
 - Tính toán thời gian làm việc dựa trên lịch trình đã phân bổ.
 ## 4. Leave Management (Quản lý nghỉ phép)
-**Mục đích:** Quản lý các loại nghỉ phép, yêu cầu và phê duyệt nghỉ phép của nhân viên.
+**Mục đích**: Quản lý các loại nghỉ phép, yêu cầu và phê duyệt nghỉ phép của nhân viên.
 
 **Nội dung:**
 
@@ -35,7 +35,7 @@
 - Theo dõi và quản lý số ngày phép đã sử dụng và còn lại của từng nhân viên.
 - Lịch sử nghỉ phép và thời gian nghỉ trong năm của nhân viên.
 ## 5. Overtime Management (Quản lý giờ làm thêm)
-**Mục đích:** Ghi nhận và quản lý giờ làm thêm ngoài giờ hành chính của nhân viên.
+**Mục đích**: Ghi nhận và quản lý giờ làm thêm ngoài giờ hành chính của nhân viên.
 
 **Nội dung:**
 
@@ -55,7 +55,7 @@
 ## 7. Attendance Reports (Báo cáo chấm công)
 **Mục đích**: Cung cấp báo cáo chi tiết về giờ làm việc, nghỉ phép, và tình trạng chấm công của nhân viên.
 
-**Nội dung:**
+**Nội dung**:
 
 - Báo cáo chi tiết về giờ chấm công hàng ngày, số giờ làm việc, số giờ làm thêm.
 - Thống kê số ngày nghỉ phép, nghỉ không lương, và thời gian vắng mặt.
