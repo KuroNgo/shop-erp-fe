@@ -4,6 +4,7 @@
         <span class="text-xl font-bold text-cyan-500">Analytics</span> <br>
         <span class="text-sm text-slate-400 italic"> refer to a series of steps or actions </span>
     </div>
+    <el-divider />
 
     <div class="flex w-full h-[450px] mt-5">
         <el-card style="height: 100%; width: 350px;" class="mr-5 rounded-md">
@@ -97,21 +98,52 @@
         </el-card>
     </div>
 
+    <!-- Process -->
+    <div class="mt-10">
+        <span class="text-xl font-bold text-cyan-500">Process</span> <br>
+        <span class="text-sm text-slate-400 italic">A set of activities or tasks designed to achieve a specific
+            outcome</span>
+    </div>
     <el-divider />
 
-    <!-- Icon sẽ hiển thị khi cuộn xuống -->
-    <div v-if="showIcon" class="fixed bottom-10 right-10 w-[300px]">
-        <el-icon>
-            <Search />
-        </el-icon>
+    <div>
+        <div>
+            <el-tabs type="border-card" class="demo-tabs">
+                <el-tab-pane label="Mark Attendance" lazy>
+                    Mark Attendance
+                </el-tab-pane>
+                <el-tab-pane label="Report" lazy>
+                    Report
+                </el-tab-pane>
+                <el-tab-pane label="Export Data" lazy>
+                    Export Data
+                </el-tab-pane>
+                <el-tab-pane label="Filter" lazy>
+                    Filter
+                </el-tab-pane>
+                <el-tab-pane label="Settings" lazy>
+                    Settings
+                </el-tab-pane>
+                <el-tab-pane label="Add Note" lazy>
+                    Add Note
+                </el-tab-pane>
+                <el-tab-pane label="Bulk Actions" lazy>
+                    Bulk Actions
+                </el-tab-pane>
+                <el-tab-pane label="Send Reminder" lazy>
+                    Send Reminder
+                </el-tab-pane>
+            </el-tabs>
+        </div>
     </div>
-
 
     <!-- Procedures -->
-    <div>
+    <div class=" mt-10">
         <span class="text-xl font-bold text-cyan-500">Procedures</span> <br>
-        <span class="text-sm text-slate-400 italic"> refer to a series of steps or actions </span>
+        <span class="text-sm text-slate-400 italic">Detailed instructions on how to carry out specific tasks within a
+            process</span>
     </div>
+    <el-divider />
 
     <div class="flex justify-between items-center mt-5">
         <el-input v-model="input" style="width: 500px; height: 40px;" placeholder="Type something"
@@ -225,14 +257,6 @@
         </div>
     </div>
 
-    <el-divider />
-
-    <!-- Process -->
-    <div>
-        <span class="text-xl font-bold text-cyan-500">Procedures</span> <br>
-        <span class="text-sm text-slate-400 italic"> refer to a series of steps or actions </span>
-    </div>
-
 
     <!-- Edit User-->
     <el-drawer v-model="drEditUser" title="View user" direction="rtl">
@@ -245,7 +269,7 @@
 </template>
 <script setup lang="ts">
 import { ref, reactive, onMounted, onUnmounted } from 'vue'
-import { Search } from '@element-plus/icons-vue'
+import { Search, Calendar } from '@element-plus/icons-vue'
 import piechart from '@/components/charts/pie/piechart.vue'
 import { ElMessage } from 'element-plus'
 
@@ -302,13 +326,6 @@ const handleClear = () => {
     ElMessage.info(`The clear value is ${value2.value}, waiting for loading data...`)
 }
 
-// Hàm xử lý khi cuộn
-const handleScroll = () => {
-    const scrollPosition = window.scrollY || document.documentElement.scrollTop
-    // Kiểm tra nếu cuộn xuống quá 100px thì hiển thị icon
-    showIcon.value = scrollPosition > 100
-}
-
 // Hàm để khởi tạo thời gian hiện tại
 const initializeTime = () => {
     currentTime.value = new Date().toLocaleString()
@@ -328,8 +345,6 @@ const handleEdit = (index: number, row: User) => {
 // Thêm sự kiện wheel khi component mount và gỡ bỏ khi component unmount
 onMounted(() => {
     initializeTime() // Cập nhật thời gian hiện tại khi refresh trang
-    // Lắng nghe sự kiện scroll khi component được mount
-    window.addEventListener('scroll', handleScroll)
     let intervalId = setInterval(() => {
         percentage2.value = (percentage2.value % 100) + 90;
 
@@ -337,14 +352,9 @@ onMounted(() => {
         if (percentage2.value >= 80) {
             clearInterval(intervalId);
         }
-    }, 0);
+    }, 150);
 
 });
-
-onUnmounted(() => {
-    // Gỡ bỏ sự kiện scroll khi component unmount
-    window.removeEventListener('scroll', handleScroll)
-})
 
 // Dữ liệu bảng (tableData)
 const tableData: User[] = [
@@ -391,7 +401,12 @@ const tableData: User[] = [
     transform: translateX(20%);
 }
 
-.fixed {
-    position: fixed;
+.demo-tabs .custom-tabs-label .el-icon {
+    vertical-align: middle;
+}
+
+.demo-tabs .custom-tabs-label span {
+    vertical-align: middle;
+    margin-left: 4px;
 }
 </style>
