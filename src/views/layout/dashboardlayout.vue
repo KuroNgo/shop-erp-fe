@@ -22,6 +22,7 @@
                         </el-menu-item>
                         <el-divider content-position="left" class="-translate-x-4">DEPARTMENTS</el-divider>
 
+                        <!-- Department -->
                         <el-sub-menu index="3">
                             <template #title>
                                 <el-icon>
@@ -111,15 +112,15 @@
                             <!-- Attendance -->
                             <el-menu-item index="4-1" @click="navigateTo('/attendance', 'attendance')">
                                 <el-icon>
-                                    <OfficeBuilding />
+                                    <Calendar />
                                 </el-icon>
                                 <span>Attendance</span>
                             </el-menu-item>
 
                             <!-- Benefit -->
-                            <el-menu-item index="4-2" @click="navigateTo('/benefit', 'benefits')">
+                            <el-menu-item index="4-2" @click="navigateTo('/benefit', 'benefit')">
                                 <el-icon>
-                                    <OfficeBuilding />
+                                    <Present />
                                 </el-icon>
                                 <span>Benefit</span>
                             </el-menu-item>
@@ -127,7 +128,7 @@
                             <!-- Candidate -->
                             <el-menu-item index="4-3" @click="navigateTo('/candidate', 'candidate')">
                                 <el-icon>
-                                    <OfficeBuilding />
+                                    <UserFilled />
                                 </el-icon>
                                 <span>Candidate</span>
                             </el-menu-item>
@@ -135,7 +136,7 @@
                             <!-- Contracts -->
                             <el-menu-item index="4-4" @click="navigateTo('/contracts', 'contracts')">
                                 <el-icon>
-                                    <OfficeBuilding />
+                                    <Document />
                                 </el-icon>
                                 <span>Contracts</span>
                             </el-menu-item>
@@ -143,15 +144,15 @@
                             <!-- Departments -->
                             <el-menu-item index="4-5" @click="navigateTo('/departments', 'departments')">
                                 <el-icon>
-                                    <OfficeBuilding />
+                                    <Folder />
                                 </el-icon>
                                 <span>Departments</span>
                             </el-menu-item>
 
                             <!-- Employees -->
-                            <el-menu-item index="4-6" @click="navigateTo('/employees', 'employee')">
+                            <el-menu-item index="4-6" @click="navigateTo('/employees', 'employees')">
                                 <el-icon>
-                                    <OfficeBuilding />
+                                    <User />
                                 </el-icon>
                                 <span>Employees</span>
                             </el-menu-item>
@@ -159,7 +160,7 @@
                             <!-- Leave Request -->
                             <el-menu-item index="4-7" @click="navigateTo('/leave-requests', 'leave request')">
                                 <el-icon>
-                                    <OfficeBuilding />
+                                    <TurnOff />
                                 </el-icon>
                                 <span>Leave Request</span>
                             </el-menu-item>
@@ -167,7 +168,7 @@
                             <!-- Performance Review -->
                             <el-menu-item index="4-8" @click="navigateTo('/performance-review', 'performance review')">
                                 <el-icon>
-                                    <OfficeBuilding />
+                                    <TrophyBase />
                                 </el-icon>
                                 <span>Performance Review</span>
                             </el-menu-item>
@@ -175,7 +176,7 @@
                             <!-- Role -->
                             <el-menu-item index="4-9" @click="navigateTo('/role', 'role')">
                                 <el-icon>
-                                    <OfficeBuilding />
+                                    <Key />
                                 </el-icon>
                                 <span>Role</span>
                             </el-menu-item>
@@ -183,7 +184,7 @@
                             <!-- Salary -->
                             <el-menu-item index="4-10" @click="navigateTo('/salary', 'salary')">
                                 <el-icon>
-                                    <OfficeBuilding />
+                                    <Money />
                                 </el-icon>
                                 <span>Salary</span>
                             </el-menu-item>
@@ -191,7 +192,7 @@
                             <!-- User -->
                             <el-menu-item index="4-11" @click="navigateTo('/user', 'user')">
                                 <el-icon>
-                                    <OfficeBuilding />
+                                    <UserFilled />
                                 </el-icon>
                                 <span>User</span>
                             </el-menu-item>
@@ -416,7 +417,7 @@
                         </div>
                     </el-menu>
                 </el-header>
-                <el-main class="h-full scroll-hide" ref="main">
+                <el-main class="h-full" ref="main">
                     <div class="flex">
                         <p class="mb-5 font-bold text-xl items-center capitalize">{{ activeView }}</p>
                         <!-- <p class="items-center text-sm translate-y-1">/edit</p> -->
