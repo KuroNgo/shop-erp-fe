@@ -16,6 +16,11 @@
         </el-select>
     </div>
 
+    <div class=" mt-5">
+        <p class="font-medium">Overall candidate status: 30 </p>
+        <p class="mt-2">candidates in process as of March 2022.</p>
+    </div>
+
     <div class="card-container space-x-5 overflow-x-auto mt-4" ref="scrCard">
         <div v-for="(item, index) in 10" :key="index" class="max-w-xs bg-white rounded-lg shadow-lg mr-1 w-[200px] ">
             <el-card style="max-width: 480px">
@@ -42,9 +47,10 @@
     </div>
     <el-divider />
 
-    <div>
-        <el-tabs type="border-card" class="candidate-tabs">
+    <div class="w-full justify-center flex bg-white p-10">
+        <el-tabs type="card" class="background-custom">
             <el-tab-pane label="Analytics">
+                Hello
                 <!-- Phân tích quy trình tuyển dụng -->
             </el-tab-pane>
 
@@ -54,6 +60,7 @@
 
             <el-tab-pane label="Process Next Step">
                 <!-- Nội dung về các bước tiếp theo trong quy trình -->
+                <processnextstep />
             </el-tab-pane>
 
             <el-tab-pane label="Interview Schedule">
@@ -82,6 +89,7 @@
 import { ref } from 'vue'
 import { ElMessage } from 'element-plus'
 import { Search } from '@element-plus/icons-vue'
+import processnextstep from './func/processnextstep.vue';
 
 const value2 = ref([])
 const input = ref('')
