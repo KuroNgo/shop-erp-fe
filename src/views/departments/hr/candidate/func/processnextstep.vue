@@ -1,6 +1,6 @@
 <template>
-    <div class="translate-x-4">
-        <el-steps style="max-width: 700px" :active="actives">
+    <div class="translate-x-4 items-center">
+        <el-steps :active="actives" finish-status="success" align-center>
             <el-step title="Step 1" description="Resume" />
             <el-step title="Step 2" description="Contact" />
             <el-step title="Step 3" description="Interview" />
@@ -10,7 +10,20 @@
     </div>
 
     <div class="flex justify-between mt-5 ">
-        <el-card style="max-width: 100%" class="ml-5 w-full bg-white mr-5 h-auto">
+        <el-card style="max-width: 100%" class=" w-full bg-white h-auto ">
+            <div class="mb-10 grid">
+                <el-avatar shape="square" :size="150" fit="cover"
+                    src="https://fuss10.elemecdn.com/e/5d/4a731a90594a4af544c0c25941171jpeg.jpeg" />
+                <div class="el-upload__tip mb-2">
+                    jpg/png files with a size less than 500kb
+                </div>
+                <el-upload class="upload-demo" action="https://run.mocky.io/v3/9d059bf9-4660-45f2-925d-ce80ad6c4d15"
+                    multiple :on-preview="handlePreview" :on-remove="handleRemove" :before-remove="beforeRemove"
+                    :limit="3" :on-exceed="handleExceed">
+                    <el-button type="primary" class="w-[150px]">Click to upload</el-button>
+                </el-upload>
+            </div>
+
             <p class="text-xl font-bold ">Candidate Information</p>
             <p class="text-sm italic text-stone-400">Details about the candidate’s background and skills</p>
             <el-divider />
@@ -159,6 +172,7 @@
 <script setup lang="ts">
 import { reactive, ref } from 'vue'
 import { ElMessage, ElMessageBox } from 'element-plus'
+import type { UploadProps, UploadUserFile } from 'element-plus'
 
 // do not use same name with ref
 const form = reactive({
@@ -207,5 +221,27 @@ const onSubmit = () => {
         })
 }
 
+const handleRemove: UploadProps['onRemove'] = (file, uploadFiles) => {
+    console.log(file, uploadFiles)
+}
 
+const handlePreview: UploadProps['onPreview'] = (uploadFile) => {
+    console.log(uploadFile)
+}
+
+const handleExceed: UploadProps['onExceed'] = (files, uploadFiles) => {
+    ElMessage.warning(
+        `The limit is 3, you selected ${files.length} files this time, add up to ${files.length + uploadFiles.length
+        } totally`
+    )
+}
+
+const beforeRemove: UploadProps['beforeRemove'] = (uploadFile, uploadFiles) => {
+    return ElMessageBox.confirm(
+        `Cancel the transfer of ${uploadFile.name} ?`
+    ).then(
+        () => true,
+        () => false
+    )
+}
 </script>
