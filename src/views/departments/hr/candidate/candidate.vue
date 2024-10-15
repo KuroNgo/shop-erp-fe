@@ -47,32 +47,36 @@
     </div>
     <el-divider />
 
-    <div class="w-full justify-center flex bg-white p-10">
-        <el-tabs type="card" class="background-custom">
-            <el-tab-pane label="Analytics">
-                Hello
+    <div class="justify-center flex bg-white p-10">
+        <el-tabs type="card" class="w-full">
+            <el-tab-pane label="Analytics" lazy>
                 <!-- Phân tích quy trình tuyển dụng -->
+                <analytics />
             </el-tab-pane>
 
-            <el-tab-pane label="Candidate List">
+            <el-tab-pane label="Candidate List" lazy>
                 <!-- Nội dung danh sách ứng viên -->
+                <candidatelist />
             </el-tab-pane>
 
-            <el-tab-pane label="Process Next Step">
+            <el-tab-pane label="Process Next Step" lazy>
                 <!-- Nội dung về các bước tiếp theo trong quy trình -->
                 <processnextstep />
             </el-tab-pane>
 
-            <el-tab-pane label="Interview Schedule">
+            <el-tab-pane label="Interview Schedule" lazy>
                 <!-- Quản lý lịch phỏng vấn -->
+                <interviewschedules />
             </el-tab-pane>
 
-            <el-tab-pane label="Feedback">
+            <el-tab-pane label="Feedback" lazy>
                 <!-- Phản hồi về ứng viên -->
+                <feedback />
             </el-tab-pane>
 
-            <el-tab-pane label="Documents">
+            <el-tab-pane label="Documents" lazy>
                 <!-- Quản lý tài liệu ứng viên -->
+                <document />
             </el-tab-pane>
         </el-tabs>
     </div>
@@ -90,6 +94,11 @@ import { ref } from 'vue'
 import { ElMessage } from 'element-plus'
 import { Search } from '@element-plus/icons-vue'
 import processnextstep from './func/processnextstep.vue';
+import interviewschedules from './func/interviewschedules.vue';
+import feedback from './func/feedback.vue';
+import document from './func/document.vue';
+import candidatelist from './func/candidatelist.vue';
+import analytics from './func/analytics.vue';
 
 const value2 = ref([])
 const input = ref('')

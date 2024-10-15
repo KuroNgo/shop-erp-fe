@@ -12,7 +12,7 @@ const handleError = (error: any) => {
 
 export const getAll = async (): Promise<Attendance[]> => {
     try {
-        const response = await axiosInstance.get('employees/get/all');
+        const response = await axiosInstance.get('attendances/get/all');
         return response.data;
     } catch (error) {
         handleError(error);
