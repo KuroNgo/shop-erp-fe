@@ -145,7 +145,7 @@ export const update = async(user:User): Promise<void> => {
                 'Content-Type': 'multipart/form-data',
             },
         });
-        // console.log('User updated successfully:', response.data);
+        console.log('User updated successfully:', response.data);
    
     } catch (error) {
         handleError(error)

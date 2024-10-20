@@ -18,8 +18,8 @@
                     jpg/png files with a size less than 500kb
                 </div>
                 <el-upload class="upload-demo" action="https://run.mocky.io/v3/9d059bf9-4660-45f2-925d-ce80ad6c4d15"
-                    multiple :on-preview="handlePreview" :on-remove="handleRemove" :before-remove="beforeRemove"
-                    :limit="3" :on-exceed="handleExceed">
+                    multiple :on-exceed="handleExceed" :auto-upload="false" :on-preview="handlePreview"
+                    :on-remove="handleRemove" list-type="picture">
                     <el-button type="primary" class="w-[150px]">Click to upload</el-button>
                 </el-upload>
             </div>
@@ -146,7 +146,9 @@
                     <span class="font-bold">Or you can drag file in this above</span>
 
                     <el-upload class="upload-demo mt-5" drag
-                        action="https://run.mocky.io/v3/9d059bf9-4660-45f2-925d-ce80ad6c4d15" multiple>
+                        action="https://run.mocky.io/v3/9d059bf9-4660-45f2-925d-ce80ad6c4d15" multiple
+                        :on-exceed="handleExceed" :auto-upload="false" :on-preview="handlePreview"
+                        :on-remove="handleRemove" list-type="picture">
                         <el-icon class="el-icon--upload"><upload-filled /></el-icon>
                         <div class="el-upload__text">
                             Drop file here or <em>click to upload</em>
