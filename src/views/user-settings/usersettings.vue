@@ -79,8 +79,9 @@
         <span class="text-xl">Edit user</span>
         <el-divider />
         <span class="font-medium">Name</span>
-        <el-input clearable v-model="inpChangeUsername" placeholder="Please input username" class="mt-3" />
-        <div class="mt-10 flex justify-end">
+        <el-input clearable v-model="inpChangeUsername" placeholder="Please input username" class="mt-3 h-[40px]" />
+        <el-divider />
+        <div class="flex justify-end">
             <el-button type="primary" plain>Save</el-button>
             <el-button type="info" plain>Close</el-button>
         </div>
@@ -92,8 +93,9 @@
         <el-divider />
         <span class="font-medium">Password</span>
         <el-input type="password" v-model="inpResetPassword" placeholder="Please input password" show-password
-            class="mt-3" />
-        <div class="mt-10 flex justify-end">
+            class="mt-3 h-[40px]" />
+        <el-divider />
+        <div class="flex justify-end">
             <el-button type="primary" plain>Save</el-button>
             <el-button type="info" plain>Close</el-button>
         </div>
