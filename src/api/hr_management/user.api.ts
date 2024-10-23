@@ -1,6 +1,7 @@
 import { axiosInstance } from "@/http";
 
 export interface User {
+    id?: string,
     email:string,
     password:string,
     fullName:string,
@@ -18,10 +19,6 @@ export interface LoginUser {
     password: string,
 }
 
-const handleError = (error: any) => {
-    console.error('API call failed: ', error);
-    throw error;
-}
 
 export const getInfor = async(): Promise<User | null> => {
     try {
