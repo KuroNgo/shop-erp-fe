@@ -22,7 +22,7 @@ export const getAll = async (): Promise<Attendance[]> => {
 
 export const getByID = async (id: string): Promise<Attendance | null> => {
     try {
-        const response = await axiosInstance.get('employees/get/id', {
+        const response = await axiosInstance.get('attendaces/get/_id', {
             params: { id }
         });
         return response.data;
@@ -34,7 +34,7 @@ export const getByID = async (id: string): Promise<Attendance | null> => {
 
 export const getByName = async (name: string): Promise<Attendance[]> => {
     try {
-        const response = await axiosInstance.get('employees/get/name', {
+        const response = await axiosInstance.get('attendaces/get/name', {
             params: { name },
         });
         return response.data;
@@ -44,9 +44,9 @@ export const getByName = async (name: string): Promise<Attendance[]> => {
     }
 };
 
-export const update = async (employee: Attendance, id: string): Promise<void> => {
+export const update = async (attendance: Attendance, id: string): Promise<void> => {
     try {
-        await axiosInstance.put(`employees/update`, employee, {
+        await axiosInstance.put(`attendaces/update`, attendance, {
             params: { id }
         });
     } catch (error) {
@@ -56,7 +56,7 @@ export const update = async (employee: Attendance, id: string): Promise<void> =>
 
 export const deleteEmployee = async (id: string): Promise<void> => {
     try {
-        await axiosInstance.delete('employees/delete', {
+        await axiosInstance.delete('attendaces/delete', {
             params: { id }
         });
     } catch (error) {
@@ -64,9 +64,9 @@ export const deleteEmployee = async (id: string): Promise<void> => {
     }
 };
 
-export const createEmployee = async (employee: Attendance): Promise<void> => {
+export const createEmployee = async (attendace: Attendance): Promise<void> => {
     try {
-        await axiosInstance.post('employees/create', employee);
+        await axiosInstance.post('attendaces/create', attendace);
     } catch (error) {
         handleError(error);
     }
