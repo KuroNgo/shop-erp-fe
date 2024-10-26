@@ -1,4 +1,4 @@
-import { axiosInstance } from "@/http";
+import {axiosInstance} from "@/http/axios";
 
 interface Employee {
     address: string;
@@ -14,49 +14,54 @@ interface Employee {
     role: string;
 }
 
-const handleError = (error: any) => {
-    console.error('API call failed:', error);
-    throw error; 
+// Hằng số URL endpoints
+const API_ENDPOINTS = {
+    GET_ALL: 'employees/get/all',
+    GET_BY_ID: 'employees/get/id',
+    GET_BY_NAME: 'employees/get/name',
+    UPDATE: 'employees/update',
+    DELETE: 'employees/delete',
+    CREATE: 'employees/create',
 };
 
-export const getAll = async (): Promise<Employee[]> => {
+export const fetchAllEmployees = async (): Promise<Employee[]> => {
     try {
-        const response = await axiosInstance.get('employees/get/all');
+        const response = await axiosInstance.get(API_ENDPOINTS.GET_ALL);
         return response.data;
     } catch (error) {
         handleError(error);
-        return []; 
+        return [];
     }
 };
 
-export const getByID = async (id: string): Promise<Employee | null> => {
+export const fetchEmployeeByID = async (id: string): Promise<Employee | null> => {
     try {
-        const response = await axiosInstance.get('employees/get/id', {
-            params: { id }
+        const response = await axiosInstance.get(API_ENDPOINTS.GET_BY_ID, {
+            params: {id},
         });
         return response.data;
     } catch (error) {
         handleError(error);
-        return null; 
+        return null;
     }
 };
 
-export const getByName = async (name: string): Promise<Employee[]> => {
+export const fetchEmployeesByName = async (name: string): Promise<Employee[]> => {
     try {
-        const response = await axiosInstance.get('employees/get/name', {
-            params: { name },
+        const response = await axiosInstance.get(API_ENDPOINTS.GET_BY_NAME, {
+            params: {name},
         });
         return response.data;
     } catch (error) {
         handleError(error);
-        return []; 
+        return [];
     }
 };
 
-export const update = async (employee: Employee, id: string): Promise<void> => {
+export const updateEmployee = async (employee: Employee, id: string): Promise<void> => {
     try {
-        await axiosInstance.put(`employees/update`, employee, {
-            params: { id }
+        await axiosInstance.put(API_ENDPOINTS.UPDATE, employee, {
+            params: {id},
         });
     } catch (error) {
         handleError(error);
@@ -65,8 +70,8 @@ export const update = async (employee: Employee, id: string): Promise<void> => {
 
 export const deleteEmployee = async (id: string): Promise<void> => {
     try {
-        await axiosInstance.delete('employees/delete', {
-            params: { id }
+        await axiosInstance.delete(API_ENDPOINTS.DELETE, {
+            params: {id},
         });
     } catch (error) {
         handleError(error);
@@ -75,7 +80,7 @@ export const deleteEmployee = async (id: string): Promise<void> => {
 
 export const createEmployee = async (employee: Employee): Promise<void> => {
     try {
-        await axiosInstance.post('employees/create', employee);
+        await axiosInstance.post(API_ENDPOINTS.CREATE, employee);
     } catch (error) {
         handleError(error);
     }
