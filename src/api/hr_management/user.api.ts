@@ -1,4 +1,10 @@
-import {axiosInstance} from "@/http/axios";
+import {axiosInstance} from "@/http";
+
+const handleError = (error: any) => {
+    console.error('API call failed: ', error);
+    throw error;
+}
+
 
 export interface User {
     id?: string;
@@ -36,7 +42,7 @@ const API_ENDPOINTS = {
 };
 
 // Lấy thông tin người dùng
-export const getInfo = async (): Promise<User | null> => {
+export const getInfor = async (): Promise<User | null> => {
     try {
         const response = await axiosInstance.get(API_ENDPOINTS.GET_INFO);
         return response.data;
