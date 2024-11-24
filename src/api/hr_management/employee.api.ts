@@ -1,4 +1,10 @@
-import {axiosInstance} from "@/http/axios";
+import {axiosInstance} from "@/http";
+
+const handleError = (error: any) => {
+    console.error('API call failed: ', error);
+    throw error;
+}
+
 
 interface Employee {
     address: string;
